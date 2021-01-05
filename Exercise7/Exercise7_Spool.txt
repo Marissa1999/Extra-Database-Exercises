@@ -1,0 +1,247 @@
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 1:
+SQL> 
+SQL> START "D:\Marissa\customerScript.sql"
+SQL> -- Customer Script
+SQL> 
+SQL> 
+SQL> /*****   CUSTOMER DROP  *******************************************************/
+SQL> drop table customer cascade constraints;
+
+Table dropped.
+
+SQL> 
+SQL> /*****   CUSTOMER DATA  *******************************************************/
+SQL> 
+SQL> CREATE TABLE CUSTOMER(
+  2  	     CustomerID 	     Number(10),
+  3  	     LastName		     Varchar2(20)		     NOT NULL,
+  4  	     FirstName		     Varchar2(20)		     NOT NULL,
+  5  	     Phone		     Varchar2(12)		     DEFAULT NULL,
+  6  	     Email		     Varchar2(20)		     DEFAULT NULL,
+  7  	     CONSTRAINT 	     CUSTOMER_CustomerID_PK	     PRIMARY KEY(CustomerID)
+  8  	     );
+
+Table created.
+
+SQL> 
+SQL> 
+SQL> /*****   CUSTOMER DATA  *******************************************************/
+SQL> 
+SQL> INSERT INTO CUSTOMER VALUES(
+  2  	     1,'Stanley', 'Elizabeth','555-236-7789', 'ES@somewhere.com');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMER VALUES(
+  2  	     2,'Price', 'Fred', '555-236-0091', 'FP@somewhere.com');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMER VALUES(
+  2  	     3,'Becky', 'Linda', '555-236-0392', 'LB@somewhere.com');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMER VALUES(
+  2  	     4,'Birch', 'Pamela', '555-236-4493', 'PB@somewhere.com');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMER VALUES(
+  2  	     5,'Romez', 'Ricardo', '555-236-3334', 'RR@somewhere.com');
+
+1 row created.
+
+SQL> INSERT INTO CUSTOMER VALUES(
+  2  	     6,'Jackson', 'Samantha', '555-236-1095', 'SJ@somewhere.com');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 2:
+SQL> 
+SQL> CREATE SEQUENCE customer_customer_id_seq
+  2  INCREMENT BY 1
+  3  START WITH 10000;
+
+Sequence created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 3:
+SQL> 
+SQL> INSERT INTO customer VALUES (customer_customer_id_seq.NEXTVAL, 'Smith', 'John', '514-744-7850', 'smithj@anywhere.com');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 4:
+SQL> 
+SQL> SELECT * FROM customer;
+
+CUSTOMERID LASTNAME             FIRSTNAME            PHONE        EMAIL                                                                                                                                 
+---------- -------------------- -------------------- ------------ --------------------                                                                                                                  
+         1 Stanley              Elizabeth            555-236-7789 ES@somewhere.com                                                                                                                      
+         2 Price                Fred                 555-236-0091 FP@somewhere.com                                                                                                                      
+         3 Becky                Linda                555-236-0392 LB@somewhere.com                                                                                                                      
+         4 Birch                Pamela               555-236-4493 PB@somewhere.com                                                                                                                      
+         5 Romez                Ricardo              555-236-3334 RR@somewhere.com                                                                                                                      
+         6 Jackson              Samantha             555-236-1095 SJ@somewhere.com                                                                                                                      
+     10000 Smith                John                 514-744-7850 smithj@anywhere.com                                                                                                                   
+
+7 rows selected.
+
+SQL> 
+SQL> --The ID is 10000.
+SQL> 
+SQL> 
+SQL> --Question 5:
+SQL> 
+SQL> SELECT CUSTOMER_CUSTOMER_ID_SEQ.CURRVAL FROM DUAL;
+
+   CURRVAL                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+     10000                                                                                                                                                                                              
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 6:
+SQL> 
+SQL> INSERT INTO customer VALUES (customer_customer_id_seq.NEXTVAL, 'Wright', 'Sarah', '514-755-6630', 'wrights@anywhere.com');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 7:
+SQL> 
+SQL> SELECT * FROM customer;
+
+CUSTOMERID LASTNAME             FIRSTNAME            PHONE        EMAIL                                                                                                                                 
+---------- -------------------- -------------------- ------------ --------------------                                                                                                                  
+         1 Stanley              Elizabeth            555-236-7789 ES@somewhere.com                                                                                                                      
+         2 Price                Fred                 555-236-0091 FP@somewhere.com                                                                                                                      
+         3 Becky                Linda                555-236-0392 LB@somewhere.com                                                                                                                      
+         4 Birch                Pamela               555-236-4493 PB@somewhere.com                                                                                                                      
+         5 Romez                Ricardo              555-236-3334 RR@somewhere.com                                                                                                                      
+         6 Jackson              Samantha             555-236-1095 SJ@somewhere.com                                                                                                                      
+     10000 Smith                John                 514-744-7850 smithj@anywhere.com                                                                                                                   
+     10001 Wright               Sarah                514-755-6630 wrights@anywhere.com                                                                                                                  
+
+8 rows selected.
+
+SQL> 
+SQL> --The ID is 10001.
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 8:
+SQL> 
+SQL> SELECT CUSTOMER_CUSTOMER_ID_SEQ.CURRVAL FROM DUAL;
+
+   CURRVAL                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+     10001                                                                                                                                                                                              
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 9:
+SQL> 
+SQL> ALTER SEQUENCE CUSTOMER_CUSTOMER_ID_SEQ
+  2  INCREMENT BY 10;
+
+Sequence altered.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 10:
+SQL> 
+SQL> INSERT INTO customer VALUES (customer_customer_id_seq.NEXTVAL, 'Patel', 'Diana', '514-766-3090', 'pateld@anywhere.com');
+
+1 row created.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 11:
+SQL> 
+SQL> SELECT * FROM customer;
+
+CUSTOMERID LASTNAME             FIRSTNAME            PHONE        EMAIL                                                                                                                                 
+---------- -------------------- -------------------- ------------ --------------------                                                                                                                  
+         1 Stanley              Elizabeth            555-236-7789 ES@somewhere.com                                                                                                                      
+         2 Price                Fred                 555-236-0091 FP@somewhere.com                                                                                                                      
+         3 Becky                Linda                555-236-0392 LB@somewhere.com                                                                                                                      
+         4 Birch                Pamela               555-236-4493 PB@somewhere.com                                                                                                                      
+         5 Romez                Ricardo              555-236-3334 RR@somewhere.com                                                                                                                      
+         6 Jackson              Samantha             555-236-1095 SJ@somewhere.com                                                                                                                      
+     10000 Smith                John                 514-744-7850 smithj@anywhere.com                                                                                                                   
+     10001 Wright               Sarah                514-755-6630 wrights@anywhere.com                                                                                                                  
+     10011 Patel                Diana                514-766-3090 pateld@anywhere.com                                                                                                                   
+
+9 rows selected.
+
+SQL> 
+SQL> --The ID is 10011.
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 12:
+SQL> 
+SQL> SELECT CUSTOMER_CUSTOMER_ID_SEQ.CURRVAL FROM DUAL;
+
+   CURRVAL                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+     10011                                                                                                                                                                                              
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 13:
+SQL> 
+SQL> DROP SEQUENCE CUSTOMER_CUSTOMER_ID_SEQ;
+
+Sequence dropped.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 14:
+SQL> 
+SQL> SPOOL OFF;

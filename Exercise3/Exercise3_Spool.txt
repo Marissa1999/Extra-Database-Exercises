@@ -1,0 +1,269 @@
+SQL> 
+SQL> 
+SQL> --Question 1:
+SQL> 
+SQL> describe employee
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ EMPLOYEEID                                                                                                        NOT NULL NUMBER(3)
+ LNAME                                                                                                             NOT NULL VARCHAR2(15)
+ FNAME                                                                                                             NOT NULL VARCHAR2(15)
+ POSITIONID                                                                                                                 NUMBER(1)
+ SUPERVISOR                                                                                                                 NUMBER(3)
+ HIREDATE                                                                                                                   DATE
+ SALARY                                                                                                                     NUMBER(6)
+ COMMISSION                                                                                                                 NUMBER(5)
+ DEPTID                                                                                                            NOT NULL NUMBER(2)
+ QUALID                                                                                                                     NUMBER(1)
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 2:
+SQL> 
+SQL> select fname, lname
+  2  from employee;
+
+FNAME           LNAME                                                                                                                                                                                   
+--------------- ---------------                                                                                                                                                                         
+John            Smith                                                                                                                                                                                   
+Larry           Houston                                                                                                                                                                                 
+Sandi           Roberts                                                                                                                                                                                 
+Alex            McCall                                                                                                                                                                                  
+Derek           Dev                                                                                                                                                                                     
+Jinku           Shaw                                                                                                                                                                                    
+Stanley         Garner                                                                                                                                                                                  
+Sunny           Chen                                                                                                                                                                                    
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 3:
+SQL> 
+SQL> select fname, lname, salary, deptid
+  2  from employee
+  3  order by fname, lname asc;
+
+FNAME           LNAME              SALARY     DEPTID                                                                                                                                                    
+--------------- --------------- --------- ----------                                                                                                                                                    
+Alex            McCall            $66,500         20                                                                                                                                                    
+Derek           Dev               $80,000         20                                                                                                                                                    
+Jinku           Shaw              $24,500         30                                                                                                                                                    
+John            Smith            $265,000         10                                                                                                                                                    
+Larry           Houston          $150,000         40                                                                                                                                                    
+Sandi           Roberts           $75,000         10                                                                                                                                                    
+Stanley         Garner            $45,000         30                                                                                                                                                    
+Sunny           Chen              $35,000         10                                                                                                                                                    
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 4:
+SQL> 
+SQL> alter session set nls_date_format = 'YYYY MM DD    HH:MI:SS AM';
+
+Session altered.
+
+SQL> 
+SQL> select fname, lname, hiredate as "TO_CHAR (HIREDATE,'YYYYMM"
+  2  from employee
+  3  order by hiredate asc;
+
+FNAME           LNAME           TO_CHAR (HIREDATE,'YYYYMM                                                                                                                                               
+--------------- --------------- -------------------------                                                                                                                                               
+John            Smith           1960 04 15    12:00:00 AM                                                                                                                                               
+Larry           Houston         1967 05 19    12:00:00 AM                                                                                                                                               
+Sandi           Roberts         1991 12 02    12:00:00 AM                                                                                                                                               
+Derek           Dev             1995 03 15    12:00:00 AM                                                                                                                                               
+Stanley         Garner          1996 02 29    12:00:00 AM                                                                                                                                               
+Alex            McCall          1997 05 10    12:00:00 AM                                                                                                                                               
+Sunny           Chen            1999 08 15    12:00:00 AM                                                                                                                                               
+Jinku           Shaw            2000 01 03    12:00:00 AM                                                                                                                                               
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 5:
+SQL> 
+SQL> select fname, lname, hiredate as "TO_CHAR (HIREDATE, 'YYYYMM)"
+  2  from employee
+  3  order by hiredate desc;
+
+FNAME           LNAME           TO_CHAR (HIREDATE, 'YYYYM                                                                                                                                               
+--------------- --------------- -------------------------                                                                                                                                               
+Jinku           Shaw            2000 01 03    12:00:00 AM                                                                                                                                               
+Sunny           Chen            1999 08 15    12:00:00 AM                                                                                                                                               
+Alex            McCall          1997 05 10    12:00:00 AM                                                                                                                                               
+Stanley         Garner          1996 02 29    12:00:00 AM                                                                                                                                               
+Derek           Dev             1995 03 15    12:00:00 AM                                                                                                                                               
+Sandi           Roberts         1991 12 02    12:00:00 AM                                                                                                                                               
+Larry           Houston         1967 05 19    12:00:00 AM                                                                                                                                               
+John            Smith           1960 04 15    12:00:00 AM                                                                                                                                               
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 6:
+SQL> 
+SQL> column salary format $999,999
+SQL> select lname, fname, salary
+  2  from employee;
+
+LNAME           FNAME              SALARY                                                                                                                                                               
+--------------- --------------- ---------                                                                                                                                                               
+Smith           John             $265,000                                                                                                                                                               
+Houston         Larry            $150,000                                                                                                                                                               
+Roberts         Sandi             $75,000                                                                                                                                                               
+McCall          Alex              $66,500                                                                                                                                                               
+Dev             Derek             $80,000                                                                                                                                                               
+Shaw            Jinku             $24,500                                                                                                                                                               
+Garner          Stanley           $45,000                                                                                                                                                               
+Chen            Sunny             $35,000                                                                                                                                                               
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 7:
+SQL> 
+SQL> column salary format $999,999
+SQL> select lname, fname, salary
+  2  from employee
+  3  order by salary desc;
+
+LNAME           FNAME              SALARY                                                                                                                                                               
+--------------- --------------- ---------                                                                                                                                                               
+Smith           John             $265,000                                                                                                                                                               
+Houston         Larry            $150,000                                                                                                                                                               
+Dev             Derek             $80,000                                                                                                                                                               
+Roberts         Sandi             $75,000                                                                                                                                                               
+McCall          Alex              $66,500                                                                                                                                                               
+Garner          Stanley           $45,000                                                                                                                                                               
+Chen            Sunny             $35,000                                                                                                                                                               
+Shaw            Jinku             $24,500                                                                                                                                                               
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 8:
+SQL> 
+SQL> select lname, fname, salary
+  2  from employee
+  3  where salary between 50000 and 80000;
+
+LNAME           FNAME              SALARY                                                                                                                                                               
+--------------- --------------- ---------                                                                                                                                                               
+Roberts         Sandi             $75,000                                                                                                                                                               
+McCall          Alex              $66,500                                                                                                                                                               
+Dev             Derek             $80,000                                                                                                                                                               
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 9:
+SQL> 
+SQL> select lname, fname, salary, commission
+  2  from employee
+  3  where commission is null;
+
+LNAME           FNAME              SALARY COMMISSION                                                                                                                                                    
+--------------- --------------- --------- ----------                                                                                                                                                    
+Roberts         Sandi             $75,000                                                                                                                                                               
+McCall          Alex              $66,500                                                                                                                                                               
+Chen            Sunny             $35,000                                                                                                                                                               
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 10:
+SQL> 
+SQL> select lname, fname, salary, commission, (salary+commission) as "SALARY + COMMISSION"
+  2  from employee
+  3  where commission is not null;
+
+LNAME           FNAME              SALARY COMMISSION SALARY + COMMISSION                                                                                                                                
+--------------- --------------- --------- ---------- -------------------                                                                                                                                
+Smith           John             $265,000      35000              300000                                                                                                                                
+Houston         Larry            $150,000      10000              160000                                                                                                                                
+Dev             Derek             $80,000      20000              100000                                                                                                                                
+Shaw            Jinku             $24,500       3000               27500                                                                                                                                
+Garner          Stanley           $45,000       5000               50000                                                                                                                                
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 11:
+SQL> 
+SQL> select lname as "Last Name", fname as "First Name", salary, commission, (salary+commission) as "Compensation"
+  2  from employee
+  3  where commission is not null;
+
+Last Name       First Name         SALARY COMMISSION Compensation                                                                                                                                       
+--------------- --------------- --------- ---------- ------------                                                                                                                                       
+Smith           John             $265,000      35000       300000                                                                                                                                       
+Houston         Larry            $150,000      10000       160000                                                                                                                                       
+Dev             Derek             $80,000      20000       100000                                                                                                                                       
+Shaw            Jinku             $24,500       3000        27500                                                                                                                                       
+Garner          Stanley           $45,000       5000        50000                                                                                                                                       
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 12:
+SQL> 
+SQL> select lname as "Last Name", fname as "First Name", salary, commission, (salary+commission) as "Compensation"
+  2  from employee
+  3  where commission is not null
+  4  order by (salary+commission) asc;
+
+Last Name       First Name         SALARY COMMISSION Compensation                                                                                                                                       
+--------------- --------------- --------- ---------- ------------                                                                                                                                       
+Shaw            Jinku             $24,500       3000        27500                                                                                                                                       
+Garner          Stanley           $45,000       5000        50000                                                                                                                                       
+Dev             Derek             $80,000      20000       100000                                                                                                                                       
+Houston         Larry            $150,000      10000       160000                                                                                                                                       
+Smith           John             $265,000      35000       300000                                                                                                                                       
+
+SQL> 
+SQL> 
+SQL> 
+SQL> spool off;

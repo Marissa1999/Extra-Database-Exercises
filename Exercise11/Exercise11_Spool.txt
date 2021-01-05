@@ -1,0 +1,362 @@
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 1:
+SQL> 
+SQL> SELECT f.Name
+  2  FROM faculty f, department d
+  3  WHERE f.DeptId = d.DeptId AND f.DeptId = 3;
+
+NAME                                                                                                                                                                                                    
+---------------                                                                                                                                                                                         
+Sen                                                                                                                                                                                                     
+Collins                                                                                                                                                                                                 
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 2:
+SQL> 
+SQL> SELECT Name
+  2  FROM faculty
+  3  WHERE DeptId = 3 AND DeptId IN (SELECT DeptId
+  4                                  FROM department);
+
+NAME                                                                                                                                                                                                    
+---------------                                                                                                                                                                                         
+Sen                                                                                                                                                                                                     
+Collins                                                                                                                                                                                                 
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 3:
+SQL> 
+SQL> SELECT s.Last, s.First, t.TermDesc
+  2  FROM student s, term t
+  3  WHERE s.StartTerm = t.TermId;
+
+LAST            FIRST           TERMDESC                                                                                                                                                                
+--------------- --------------- -----------                                                                                                                                                             
+Diaz            Jose            Winter 2003                                                                                                                                                             
+Tyler           Mickey          Spring 2003                                                                                                                                                             
+Patel           Rajesh          Winter 2003                                                                                                                                                             
+Rickles         Deborah         Fall 2002                                                                                                                                                               
+Lee             Brian           Winter 2003                                                                                                                                                             
+Khan            Amir            Winter 2003                                                                                                                                                             
+
+6 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 4:
+SQL> 
+SQL> SELECT c.CourseId, c.Title, c.PreReq, t.Title
+  2  FROM course c LEFT JOIN course t
+  3  ON t.CourseId = c.PreReq;
+
+COURSE TITLE                PREREQ TITLE                                                                                                                                                                
+------ -------------------- ------ --------------------                                                                                                                                                 
+LA123  English Literature   EN100  Basic English                                                                                                                                                        
+CIS265 Systems Analysis     CIS253 Database Systems                                                                                                                                                     
+AC101  Accounting                                                                                                                                                                                       
+MA150  College Algebra                                                                                                                                                                                  
+CIS253 Database Systems                                                                                                                                                                                 
+EN100  Basic English                                                                                                                                                                                    
+
+6 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 5:
+SQL> 
+SQL> SELECT SUM(Capacity)
+  2  FROM location
+  3  WHERE RoomType IN (SELECT RoomType
+  4                     FROM room
+  5     WHERE RoomDesc = 'Classroom');
+
+SUM(CAPACITY)                                                                                                                                                                                           
+-------------                                                                                                                                                                                           
+           95                                                                                                                                                                                           
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 6:
+SQL> 
+SQL> SELECT SUM(Capacity)
+  2  FROM location l, room r
+  3  WHERE l.RoomType = r.RoomType AND r.RoomDesc = 'Classroom';
+
+SUM(CAPACITY)                                                                                                                                                                                           
+-------------                                                                                                                                                                                           
+           95                                                                                                                                                                                           
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 7:
+SQL> 
+SQL> SELECT Building, RoomNo
+  2  FROM location
+  3  WHERE RoomId = (SELECT RoomId
+  4                  FROM faculty
+  5  WHERE Name = 'Jones');
+
+BUILDIN ROO                                                                                                                                                                                             
+------- ---                                                                                                                                                                                             
+Gandhi  101                                                                                                                                                                                             
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 8:
+SQL> 
+SQL> SELECT l.Building, l.RoomNo
+  2  FROM location l, faculty f
+  3  WHERE l.RoomId = f.RoomId AND f.Name = 'Jones';
+
+BUILDIN ROO                                                                                                                                                                                             
+------- ---                                                                                                                                                                                             
+Gandhi  101                                                                                                                                                                                             
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 9:
+SQL> 
+SQL> SELECT Title
+  2  FROM course
+  3  WHERE CourseId = (SELECT CourseId
+  4                    FROM crssection
+  5    WHERE CsId = (SELECT CsId
+  6                  FROM registration
+  7  WHERE MidTerm = 'F' AND StudentId = (SELECT StudentId
+  8       FROM student
+  9   WHERE First = 'Deborah')));
+
+TITLE                                                                                                                                                                                                   
+--------------------                                                                                                                                                                                    
+Systems Analysis                                                                                                                                                                                        
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 10:
+SQL> 
+SQL> SELECT c.Title
+  2  FROM student s, registration r, crssection cr, course c
+  3  WHERE cr.CourseId = c.CourseId AND r.StudentId = s.StudentId
+  4  AND cr.CsId = r.CsId AND s.First = 'Deborah' AND r.MidTerm = 'F';
+
+TITLE                                                                                                                                                                                                   
+--------------------                                                                                                                                                                                    
+Systems Analysis                                                                                                                                                                                        
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 11:
+SQL> 
+SQL> SELECT e.LName, e.FName, q.QualDesc
+  2  FROM employee e LEFT JOIN qualification q
+  3  USING (QualId)
+  4  ORDER BY e.LName;
+
+LNAME           FNAME           QUALDESC                                                                                                                                                                
+--------------- --------------- -----------                                                                                                                                                             
+Chen            Sunny           Bachelors                                                                                                                                                               
+Dev             Derek           Doctorate                                                                                                                                                               
+Garner          Stanley         High School                                                                                                                                                             
+Houston         Larry           Masters                                                                                                                                                                 
+McCall          Alex            Associates                                                                                                                                                              
+Roberts         Sandi           Masters                                                                                                                                                                 
+Shaw            Jinku                                                                                                                                                                                   
+Smith           John            Doctorate                                                                                                                                                               
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 12:
+SQL> 
+SQL> SELECT s.Last, s.FIRST
+  2  FROM student s, term t
+  3  WHERE s.StartTerm = t.TermId AND t.TermId = 'WN03';
+
+LAST            FIRST                                                                                                                                                                                   
+--------------- ---------------                                                                                                                                                                         
+Diaz            Jose                                                                                                                                                                                    
+Patel           Rajesh                                                                                                                                                                                  
+Lee             Brian                                                                                                                                                                                   
+Khan            Amir                                                                                                                                                                                    
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 13:
+SQL> 
+SQL> SELECT Last, First
+  2  FROM student
+  3  WHERE StartTerm IN (SELECT TermId
+  4                     FROM term
+  5     WHERE TermId = 'WN03');
+
+LAST            FIRST                                                                                                                                                                                   
+--------------- ---------------                                                                                                                                                                         
+Diaz            Jose                                                                                                                                                                                    
+Patel           Rajesh                                                                                                                                                                                  
+Lee             Brian                                                                                                                                                                                   
+Khan            Amir                                                                                                                                                                                    
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 14:
+SQL> 
+SQL> SELECT c.CourseId, c.Section, f.Name
+  2  FROM crssection c LEFT JOIN faculty f
+  3  USING (FacultyId)
+  4  ORDER BY Name;
+
+COURSE SE NAME                                                                                                                                                                                          
+------ -- ---------------                                                                                                                                                                               
+CIS253 11 Jones                                                                                                                                                                                         
+CIS265 02 Jones                                                                                                                                                                                         
+CIS265 01 Jones                                                                                                                                                                                         
+CIS253 31 Mobley                                                                                                                                                                                        
+CIS253 21 Mobley                                                                                                                                                                                        
+CIS253 01 Mobley                                                                                                                                                                                        
+MA150  02 Rivera                                                                                                                                                                                        
+AC101  10 Sen                                                                                                                                                                                           
+LA123  05                                                                                                                                                                                               
+CIS265 01                                                                                                                                                                                               
+
+10 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 15:
+SQL> 
+SQL> SELECT Name
+  2  FROM faculty
+  3  WHERE RoomId IN (SELECT RoomId
+  4                  FROM location
+  5  WHERE Building = 'Gandhi');
+
+NAME                                                                                                                                                                                                    
+---------------                                                                                                                                                                                         
+Jones                                                                                                                                                                                                   
+Williams                                                                                                                                                                                                
+Mobley                                                                                                                                                                                                  
+Vajpayee                                                                                                                                                                                                
+Sen                                                                                                                                                                                                     
+Rivera                                                                                                                                                                                                  
+Chang                                                                                                                                                                                                   
+Collins                                                                                                                                                                                                 
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 16:
+SQL> 
+SQL> SELECT Name
+  2  FROM faculty
+  3  WHERE RoomId IN (SELECT RoomId
+  4                  FROM location
+  5  WHERE Building = 'Gandhi' AND RoomId = 17)
+  6  AND Name <> 'Collins';
+
+NAME                                                                                                                                                                                                    
+---------------                                                                                                                                                                                         
+Chang                                                                                                                                                                                                   
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 17:
+SQL> 
+SQL> SELECT First, Last
+  2  FROM student
+  3  WHERE FacultyId = (SELECT FacultyId
+  4                     FROM department
+  5     WHERE DeptName = 'Accounting');
+
+FIRST           LAST                                                                                                                                                                                    
+--------------- ---------------                                                                                                                                                                         
+Brian           Lee                                                                                                                                                                                     
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> SPOOL OFF;

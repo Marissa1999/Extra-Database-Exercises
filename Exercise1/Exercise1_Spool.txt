@@ -1,0 +1,140 @@
+SQL> 
+SQL> 
+SQL> --A.
+SQL> 
+SQL> SELECT * FROM employee;
+
+EMPLOYEEID LNAME           FNAME           POSITIONID SUPERVISOR HIREDATE      SALARY COMMISSION     DEPTID     QUALID                                                              
+---------- --------------- --------------- ---------- ---------- --------- ---------- ---------- ---------- ----------                                                              
+       111 Smith           John                     1            15-APR-60     265000      35000         10          1                                                              
+       246 Houston         Larry                    2        111 19-MAY-67     150000      10000         40          2                                                              
+       123 Roberts         Sandi                    2        111 02-DEC-91      75000                    10          2                                                              
+       433 McCall          Alex                     3        543 10-MAY-97      66500                    20          4                                                              
+       543 Dev             Derek                    2        111 15-MAR-95      80000      20000         20          1                                                              
+       200 Shaw            Jinku                    5        135 03-JAN-00      24500       3000         30                                                                         
+       135 Garner          Stanley                  2        111 29-FEB-96      45000       5000         30          5                                                              
+       222 Chen            Sunny                    4        123 15-AUG-99      35000                    10          3                                                              
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> --B.
+SQL> 
+SQL> SELECT * FROM employee
+  2  WHERE commission > 15000;
+
+EMPLOYEEID LNAME           FNAME           POSITIONID SUPERVISOR HIREDATE      SALARY COMMISSION     DEPTID     QUALID                                                              
+---------- --------------- --------------- ---------- ---------- --------- ---------- ---------- ---------- ----------                                                              
+       111 Smith           John                     1            15-APR-60     265000      35000         10          1                                                              
+       543 Dev             Derek                    2        111 15-MAR-95      80000      20000         20          1                                                              
+
+SQL> 
+SQL> 
+SQL> --C:
+SQL> 
+SQL> SELECT * FROM employee
+  2  WHERE commission is null;
+
+EMPLOYEEID LNAME           FNAME           POSITIONID SUPERVISOR HIREDATE      SALARY COMMISSION     DEPTID     QUALID                                                              
+---------- --------------- --------------- ---------- ---------- --------- ---------- ---------- ---------- ----------                                                              
+       123 Roberts         Sandi                    2        111 02-DEC-91      75000                    10          2                                                              
+       433 McCall          Alex                     3        543 10-MAY-97      66500                    20          4                                                              
+       222 Chen            Sunny                    4        123 15-AUG-99      35000                    10          3                                                              
+
+SQL> 
+SQL> 
+SQL> --D.
+SQL> 
+SQL> SELECT LNAME, FNAME
+  2  FROM employee;
+
+LNAME           FNAME                                                                                                                                                               
+--------------- ---------------                                                                                                                                                     
+Smith           John                                                                                                                                                                
+Houston         Larry                                                                                                                                                               
+Roberts         Sandi                                                                                                                                                               
+McCall          Alex                                                                                                                                                                
+Dev             Derek                                                                                                                                                               
+Shaw            Jinku                                                                                                                                                               
+Garner          Stanley                                                                                                                                                             
+Chen            Sunny                                                                                                                                                               
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> --E.
+SQL> 
+SQL> SELECT LNAME|| ', ' ||FNAME
+  2  FROM employee;
+
+LNAME||','||FNAME                                                                                                                                                                   
+--------------------------------                                                                                                                                                    
+Smith, John                                                                                                                                                                         
+Houston, Larry                                                                                                                                                                      
+Roberts, Sandi                                                                                                                                                                      
+McCall, Alex                                                                                                                                                                        
+Dev, Derek                                                                                                                                                                          
+Shaw, Jinku                                                                                                                                                                         
+Garner, Stanley                                                                                                                                                                     
+Chen, Sunny                                                                                                                                                                         
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --F.
+SQL> 
+SQL> SELECT DISTINCT DEPTID
+  2  FROM employee;
+
+    DEPTID                                                                                                                                                                          
+----------                                                                                                                                                                          
+        30                                                                                                                                                                          
+        20                                                                                                                                                                          
+        40                                                                                                                                                                          
+        10                                                                                                                                                                          
+
+SQL> 
+SQL> 
+SQL> --G.
+SQL> 
+SQL> SELECT LNAME, FNAME
+  2  FROM employee
+  3  WHERE DEPTID IN (10, 30)
+  4  ORDER BY LNAME ASC;
+
+LNAME           FNAME                                                                                                                                                               
+--------------- ---------------                                                                                                                                                     
+Chen            Sunny                                                                                                                                                               
+Garner          Stanley                                                                                                                                                             
+Roberts         Sandi                                                                                                                                                               
+Shaw            Jinku                                                                                                                                                               
+Smith           John                                                                                                                                                                
+
+SQL> 
+SQL> 
+SQL> --H.
+SQL> 
+SQL> SELECT LNAME as "Last Name", FNAME as "First Name" , (salary*10/100) as "Bonus"
+  2  FROM employee;
+
+Last Name       First Name           Bonus                                                                                                                                          
+--------------- --------------- ----------                                                                                                                                          
+Smith           John                 26500                                                                                                                                          
+Houston         Larry                15000                                                                                                                                          
+Roberts         Sandi                 7500                                                                                                                                          
+McCall          Alex                  6650                                                                                                                                          
+Dev             Derek                 8000                                                                                                                                          
+Shaw            Jinku                 2450                                                                                                                                          
+Garner          Stanley               4500                                                                                                                                          
+Chen            Sunny                 3500                                                                                                                                          
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> spool off

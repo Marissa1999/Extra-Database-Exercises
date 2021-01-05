@@ -1,0 +1,229 @@
+SQL> 
+SQL> 
+SQL> --Question 1:
+SQL> 
+SQL> describe student
+ Name                                                                                                  Null?    Type
+ ----------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------
+ STUDENTID                                                                                             NOT NULL CHAR(5)
+ LAST                                                                                                  NOT NULL VARCHAR2(15)
+ FIRST                                                                                                 NOT NULL VARCHAR2(15)
+ STREET                                                                                                         VARCHAR2(25)
+ CITY                                                                                                           VARCHAR2(15)
+ STATE                                                                                                          CHAR(2)
+ ZIP                                                                                                            CHAR(5)
+ STARTTERM                                                                                                      CHAR(4)
+ BIRTHDATE                                                                                                      DATE
+ FACULTYID                                                                                                      NUMBER(3)
+ MAJORID                                                                                                        NUMBER(3)
+ PHONE                                                                                                          CHAR(10)
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 2:
+SQL> 
+SQL> select * from major;
+
+   MAJORID MAJORDESC                                                                                                                                                                
+---------- -------------------------                                                                                                                                                
+       100 AAS-Accounting                                                                                                                                                           
+       200 AAS-Computer Science                                                                                                                                                     
+       300 AAS-Telecommunications                                                                                                                                                   
+       400 BS-Accounting                                                                                                                                                            
+       500 BS-Computer Science                                                                                                                                                      
+       600 BS-Telecommunications                                                                                                                                                    
+
+6 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 3:
+SQL> 
+SQL> select First as "First Name", Last as "Last Name", BirthDate as "BirthDay"
+  2  from student;
+
+First Name      Last Name       BirthDay                                                                                                                                            
+--------------- --------------- ---------                                                                                                                                           
+Jose            Diaz            12-FEB-83                                                                                                                                           
+Mickey          Tyler           18-MAR-84                                                                                                                                           
+Rajesh          Patel           12-DEC-85                                                                                                                                           
+Deborah         Rickles         20-OCT-70                                                                                                                                           
+Brian           Lee             28-NOV-85                                                                                                                                           
+Amir            Khan            07-JUL-84                                                                                                                                           
+
+6 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 4:
+SQL> 
+SQL> select fname||', '||lname as "Full Name", hiredate as "HireDate"
+  2  from employee;
+
+Full Name                        HireDate                                                                                                                                           
+-------------------------------- ---------                                                                                                                                          
+John, Smith                      15-APR-60                                                                                                                                          
+Larry, Houston                   19-MAY-67                                                                                                                                          
+Sandi, Roberts                   02-DEC-91                                                                                                                                          
+Alex, McCall                     10-MAY-97                                                                                                                                          
+Derek, Dev                       15-MAR-95                                                                                                                                          
+Jinku, Shaw                      03-JAN-00                                                                                                                                          
+Stanley, Garner                  29-FEB-96                                                                                                                                          
+Sunny, Chen                      15-AUG-99                                                                                                                                          
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 5:
+SQL> 
+SQL> select distinct building
+  2  from location;
+
+BUILDIN                                                                                                                                                                             
+-------                                                                                                                                                                             
+Gandhi                                                                                                                                                                              
+Kennedy                                                                                                                                                                             
+Nehru                                                                                                                                                                               
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 6:
+SQL> 
+SQL> select fname, lname
+  2  from employee
+  3  where fname like 'S%';
+
+FNAME           LNAME                                                                                                                                                               
+--------------- ---------------                                                                                                                                                     
+Sandi           Roberts                                                                                                                                                             
+Stanley         Garner                                                                                                                                                              
+Sunny           Chen                                                                                                                                                                
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 7:
+SQL> 
+SQL> select fname, lname
+  2  from employee
+  3  where fname like 'S____';
+
+FNAME           LNAME                                                                                                                                                               
+--------------- ---------------                                                                                                                                                     
+Sandi           Roberts                                                                                                                                                             
+Sunny           Chen                                                                                                                                                                
+
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 8:
+SQL> 
+SQL> select fname, lname, commission
+  2  from employee
+  3  where not commission is null;
+
+FNAME           LNAME           COMMISSION                                                                                                                                          
+--------------- --------------- ----------                                                                                                                                          
+John            Smith                35000                                                                                                                                          
+Larry           Houston              10000                                                                                                                                          
+Derek           Dev                  20000                                                                                                                                          
+Jinku           Shaw                  3000                                                                                                                                          
+Stanley         Garner                5000                                                                                                                                          
+
+SQL> 
+SQL> select fname, lname, '$'||commission||'.00' as "COMMISSION AMOUNT"
+  2  from employee
+  3  where not commission is null;
+
+FNAME           LNAME           COMMISSION AMOUNT                                                                                                                                   
+--------------- --------------- --------------------------------------------                                                                                                        
+John            Smith           $35000.00                                                                                                                                           
+Larry           Houston         $10000.00                                                                                                                                           
+Derek           Dev             $20000.00                                                                                                                                           
+Jinku           Shaw            $3000.00                                                                                                                                            
+Stanley         Garner          $5000.00                                                                                                                                            
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 9:
+SQL> 
+SQL> select fname, lname, commission
+  2  from employee
+  3  where commission is null;
+
+FNAME           LNAME           COMMISSION                                                                                                                                          
+--------------- --------------- ----------                                                                                                                                          
+Sandi           Roberts                                                                                                                                                             
+Alex            McCall                                                                                                                                                              
+Sunny           Chen                                                                                                                                                                
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 10:
+SQL> 
+SQL> select fname, lname, salary
+  2  from employee
+  3  where salary < 30000;
+
+FNAME           LNAME               SALARY                                                                                                                                          
+--------------- --------------- ----------                                                                                                                                          
+Jinku           Shaw                 24500                                                                                                                                          
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 11:
+SQL> 
+SQL> select fname, lname, salary
+  2  from employee
+  3  where salary >= 50000 AND salary <= 82000;
+
+FNAME           LNAME               SALARY                                                                                                                                          
+--------------- --------------- ----------                                                                                                                                          
+Sandi           Roberts              75000                                                                                                                                          
+Alex            McCall               66500                                                                                                                                          
+Derek           Dev                  80000                                                                                                                                          
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 12:
+SQL> 
+SQL> select first, last
+  2  from student
+  3  where studentid = 104;
+
+FIRST           LAST                                                                                                                                                                
+--------------- ---------------                                                                                                                                                     
+Brian           Lee                                                                                                                                                                 
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 13:
+SQL> 
+SQL> select courseid, section, endtime
+  2  from crssection
+  3  where endtime = '12:00';
+
+COURSE SE ENDTI                                                                                                                                                                     
+------ -- -----                                                                                                                                                                     
+MA150  02 12:00                                                                                                                                                                     
+AC101  10 12:00                                                                                                                                                                     
+
+SQL> 
+SQL> 
+SQL> spool off

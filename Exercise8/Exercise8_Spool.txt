@@ -1,0 +1,429 @@
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 1:
+SQL> 
+SQL> SELECT * FROM LOCATION;
+
+    ROOMID BUILDIN ROO   CAPACITY R                                                                                                                                                                     
+---------- ------- --- ---------- -                                                                                                                                                                     
+        11 Gandhi  101          2 O                                                                                                                                                                     
+        12 Gandhi  103          2 O                                                                                                                                                                     
+        13 Kennedy 202         35 L                                                                                                                                                                     
+        14 Kennedy 204         50 L                                                                                                                                                                     
+        15 Nehru   301         50 C                                                                                                                                                                     
+        16 Nehru   309         45 C                                                                                                                                                                     
+        17 Gandhi  105          2 O                                                                                                                                                                     
+        18 Kennedy 206         40 L                                                                                                                                                                     
+        19 Kennedy 210         30 L                                                                                                                                                                     
+        20 Gandhi  107          2 O                                                                                                                                                                     
+        21 Gandhi  109          2 O                                                                                                                                                                     
+
+11 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 2:
+SQL> 
+SQL> SELECT COUNT(roomid)
+  2  FROM LOCATION;
+
+COUNT(ROOMID)                                                                                                                                                                                           
+-------------                                                                                                                                                                                           
+           11                                                                                                                                                                                           
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 3:
+SQL> 
+SQL> SELECT * FROM EMPLOYEE;
+
+EMPLOYEEID LNAME           FNAME           POSITIONID SUPERVISOR HIREDATE      SALARY COMMISSION     DEPTID     QUALID                                                                                  
+---------- --------------- --------------- ---------- ---------- --------- ---------- ---------- ---------- ----------                                                                                  
+       111 Smith           John                     1            15-APR-60     265000      35000         10          1                                                                                  
+       246 Houston         Larry                    2        111 19-MAY-67     150000      10000         40          2                                                                                  
+       123 Roberts         Sandi                    2        111 02-DEC-91      75000                    10          2                                                                                  
+       433 McCall          Alex                     3        543 10-MAY-97      66500                    20          4                                                                                  
+       543 Dev             Derek                    2        111 15-MAR-95      80000      20000         20          1                                                                                  
+       200 Shaw            Jinku                    5        135 03-JAN-00      24500       3000         30                                                                                             
+       135 Garner          Stanley                  2        111 29-FEB-96      45000       5000         30          5                                                                                  
+       222 Chen            Sunny                    4        123 15-AUG-99      35000                    10          3                                                                                  
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 4:
+SQL> 
+SQL> SELECT AVG(TRUNC((SYSDATE - HireDate) / 365.25)), MAX(TRUNC((SYSDATE - HireDate) / 365.25)), MIN(TRUNC((SYSDATE - HireDate) / 365.25))
+  2  FROM EMPLOYEE;
+
+AVG(TRUNC((SYSDATE-HIREDATE)/365.25)) MAX(TRUNC((SYSDATE-HIREDATE)/365.25)) MIN(TRUNC((SYSDATE-HIREDATE)/365.25))                                                                                       
+------------------------------------- ------------------------------------- -------------------------------------                                                                                       
+                                29.75                                    58                                    18                                                                                       
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 5:
+SQL> 
+SQL> SELECT * FROM DEPENDENT;
+
+EMPLOYEEID DEPENDENTID DEPDOB    RELATION                                                                                                                                                               
+---------- ----------- --------- --------                                                                                                                                                               
+       543           1 28-SEP-58 Spouse                                                                                                                                                                 
+       543           2 14-OCT-88 Son                                                                                                                                                                    
+       200           1 10-JUN-76 Spouse                                                                                                                                                                 
+       222           1 04-FEB-75 Spouse                                                                                                                                                                 
+       222           2 23-AUG-97 Son                                                                                                                                                                    
+       222           3 10-JUL-99 Daughter                                                                                                                                                               
+       111           1 12-DEC-45 Spouse                                                                                                                                                                 
+
+7 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 6:
+SQL> 
+SQL> SELECT EmployeeId, COUNT(EmployeeId)
+  2  FROM DEPENDENT
+  3  GROUP BY EmployeeId
+  4  HAVING COUNT(EmployeeId) >= 2;
+
+EMPLOYEEID COUNT(EMPLOYEEID)                                                                                                                                                                            
+---------- -----------------                                                                                                                                                                            
+       222                 3                                                                                                                                                                            
+       543                 2                                                                                                                                                                            
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 7:
+SQL> 
+SQL> 
+SQL> --a)
+SQL> 
+SQL> SELECT AVG(Commission)
+  2  FROM EMPLOYEE
+  3  WHERE Commission IS NOT NULL;
+
+AVG(COMMISSION)                                                                                                                                                                                         
+---------------                                                                                                                                                                                         
+          14600                                                                                                                                                                                         
+
+SQL> 
+SQL> 
+SQL> --b)
+SQL> 
+SQL> SELECT AVG(NVL(Commission, 0))
+  2  FROM EMPLOYEE;
+
+AVG(NVL(COMMISSION,0))                                                                                                                                                                                  
+----------------------                                                                                                                                                                                  
+                  9125                                                                                                                                                                                  
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 8:
+SQL> 
+SQL> SELECT * FROM CRSSECTION;
+
+      CSID COURSE SE TERM  FACULTYID DA START ENDTI     ROOMID   MAXCOUNT                                                                                                                               
+---------- ------ -- ---- ---------- -- ----- ----- ---------- ----------                                                                                                                               
+      1101 CIS265 01 WN03        111 MW 09:00 10:30         13         30                                                                                                                               
+      1102 CIS253 01 WN03        123 TR 09:00 10:30         18         40                                                                                                                               
+      1103 MA150  02 WN03        444 F  09:00 12:00         15         25                                                                                                                               
+      1104 AC101  10 WN03        345 MW 10:30 12:00         16         35                                                                                                                               
+      1205 CIS265 01 SP03            MW 09:00 10:30         14         35                                                                                                                               
+      1206 CIS265 02 SP03        111 TR 09:00 10:30         18         30                                                                                                                               
+      1207 LA123  05 SP03            MW 09:00 10:30         15         30                                                                                                                               
+      1208 CIS253 21 SP03        123 TR 09:00 10:30         14         40                                                                                                                               
+      1209 CIS253 11 SP03        111 MW 09:00 10:30         18         40                                                                                                                               
+      1210 CIS253 31 SP03        123 F  TBA   TBA           19          2                                                                                                                               
+
+10 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 9:
+SQL> 
+SQL> SELECT TermId, CourseId, SUM(MaxCount)
+  2  FROM CRSSECTION
+  3  GROUP BY TermId, CourseId;
+
+TERM COURSE SUM(MAXCOUNT)                                                                                                                                                                               
+---- ------ -------------                                                                                                                                                                               
+WN03 CIS265            30                                                                                                                                                                               
+WN03 AC101             35                                                                                                                                                                               
+WN03 CIS253            40                                                                                                                                                                               
+WN03 MA150             25                                                                                                                                                                               
+SP03 CIS253            82                                                                                                                                                                               
+SP03 LA123             30                                                                                                                                                                               
+SP03 CIS265            65                                                                                                                                                                               
+
+7 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 10:
+SQL> 
+SQL> SELECT * FROM FACULTY;
+
+ FACULTYID NAME                ROOMID PHO     DEPTID                                                                                                                                                    
+---------- --------------- ---------- --- ----------                                                                                                                                                    
+       111 Jones                   11 525          1                                                                                                                                                    
+       222 Williams                20 533          2                                                                                                                                                    
+       123 Mobley                  11 529          1                                                                                                                                                    
+       235 Vajpayee                12 577          2                                                                                                                                                    
+       345 Sen                     12 579          3                                                                                                                                                    
+       444 Rivera                  21 544          4                                                                                                                                                    
+       555 Chang                   17 587          5                                                                                                                                                    
+       333 Collins                 17 599          3                                                                                                                                                    
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 11:
+SQL> 
+SQL> SELECT DeptId, COUNT(FacultyId)
+  2  FROM FACULTY
+  3  GROUP BY DeptId;
+
+    DEPTID COUNT(FACULTYID)                                                                                                                                                                             
+---------- ----------------                                                                                                                                                                             
+         1                2                                                                                                                                                                             
+         2                2                                                                                                                                                                             
+         4                1                                                                                                                                                                             
+         5                1                                                                                                                                                                             
+         3                2                                                                                                                                                                             
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 12:
+SQL> 
+SQL> SELECT DeptId, AVG(Salary)
+  2  FROM EMPLOYEE
+  3  GROUP BY DeptId;
+
+    DEPTID AVG(SALARY)                                                                                                                                                                                  
+---------- -----------                                                                                                                                                                                  
+        30       34750                                                                                                                                                                                  
+        20       73250                                                                                                                                                                                  
+        40      150000                                                                                                                                                                                  
+        10      125000                                                                                                                                                                                  
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 13:
+SQL> 
+SQL> SELECT DeptId, AVG(Salary)
+  2  FROM EMPLOYEE
+  3  GROUP BY DeptId
+  4  HAVING AVG(Salary) >= 75000;
+
+    DEPTID AVG(SALARY)                                                                                                                                                                                  
+---------- -----------                                                                                                                                                                                  
+        40      150000                                                                                                                                                                                  
+        10      125000                                                                                                                                                                                  
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 14:
+SQL> 
+SQL> COLUMN SalaryFormat FORMAT $999,999.99
+SQL> SELECT EmployeeId, UPPER(Lname||' '||Fname), Salary SalaryFormat, Salary/100
+  2  FROM EMPLOYEE
+  3  ORDER BY Salary DESC;
+
+EMPLOYEEID UPPER(LNAME||''||FNAME)         SALARYFORMAT SALARY/100                                                                                                                                      
+---------- ------------------------------- ------------ ----------                                                                                                                                      
+       111 SMITH JOHN                       $265,000.00       2650                                                                                                                                      
+       246 HOUSTON LARRY                    $150,000.00       1500                                                                                                                                      
+       543 DEV DEREK                         $80,000.00        800                                                                                                                                      
+       123 ROBERTS SANDI                     $75,000.00        750                                                                                                                                      
+       433 MCCALL ALEX                       $66,500.00        665                                                                                                                                      
+       135 GARNER STANLEY                    $45,000.00        450                                                                                                                                      
+       222 CHEN SUNNY                        $35,000.00        350                                                                                                                                      
+       200 SHAW JINKU                        $24,500.00        245                                                                                                                                      
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 15:
+SQL> 
+SQL> SELECT Lname, Fname, TO_CHAR(HireDate, 'DD-MON-YYYY')
+  2  FROM EMPLOYEE
+  3  ORDER BY Lname ASC;
+
+LNAME           FNAME           TO_CHAR(HIREDATE,'DD                                                                                                                                                    
+--------------- --------------- --------------------                                                                                                                                                    
+Chen            Sunny           15-AUG-1999                                                                                                                                                             
+Dev             Derek           15-MAR-1995                                                                                                                                                             
+Garner          Stanley         29-FEB-1996                                                                                                                                                             
+Houston         Larry           19-MAY-1967                                                                                                                                                             
+McCall          Alex            10-MAY-1997                                                                                                                                                             
+Roberts         Sandi           02-DEC-1991                                                                                                                                                             
+Shaw            Jinku           03-JAN-2000                                                                                                                                                             
+Smith           John            15-APR-1960                                                                                                                                                             
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 16:
+SQL> 
+SQL> SELECT Lname, Fname, TO_CHAR(HireDate, 'YYYY')
+  2  FROM EMPLOYEE
+  3  ORDER BY Lname ASC;
+
+LNAME           FNAME           TO_C                                                                                                                                                                    
+--------------- --------------- ----                                                                                                                                                                    
+Chen            Sunny           1999                                                                                                                                                                    
+Dev             Derek           1995                                                                                                                                                                    
+Garner          Stanley         1996                                                                                                                                                                    
+Houston         Larry           1967                                                                                                                                                                    
+McCall          Alex            1997                                                                                                                                                                    
+Roberts         Sandi           1991                                                                                                                                                                    
+Shaw            Jinku           2000                                                                                                                                                                    
+Smith           John            1960                                                                                                                                                                    
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 17:
+SQL> 
+SQL> SELECT '####'||POWER(2, 10)
+  2  FROM DUAL;
+
+'####'||                                                                                                                                                                                                
+--------                                                                                                                                                                                                
+####1024                                                                                                                                                                                                
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 18:
+SQL> 
+SQL> COLUMN Years FORMAT 999
+SQL> SELECT EmployeeId, Lname, Fname, FLOOR((SYSDATE - HireDate)/ 365) Years
+  2  FROM EMPLOYEE;
+
+EMPLOYEEID LNAME           FNAME           YEARS                                                                                                                                                        
+---------- --------------- --------------- -----                                                                                                                                                        
+       111 Smith           John               58                                                                                                                                                        
+       246 Houston         Larry              51                                                                                                                                                        
+       123 Roberts         Sandi              26                                                                                                                                                        
+       433 McCall          Alex               21                                                                                                                                                        
+       543 Dev             Derek              23                                                                                                                                                        
+       200 Shaw            Jinku              18                                                                                                                                                        
+       135 Garner          Stanley            22                                                                                                                                                        
+       222 Chen            Sunny              19                                                                                                                                                        
+
+8 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 19:
+SQL> 
+SQL> COLUMN Years FORMAT 999
+SQL> SELECT EmployeeId, Lname, Fname, FLOOR((SYSDATE - HireDate)/ 365) Years
+  2  FROM EMPLOYEE
+  3  WHERE FLOOR((SYSDATE - HireDate)/ 365) >= 20;
+
+EMPLOYEEID LNAME           FNAME           YEARS                                                                                                                                                        
+---------- --------------- --------------- -----                                                                                                                                                        
+       111 Smith           John               58                                                                                                                                                        
+       246 Houston         Larry              51                                                                                                                                                        
+       123 Roberts         Sandi              26                                                                                                                                                        
+       433 McCall          Alex               21                                                                                                                                                        
+       543 Dev             Derek              23                                                                                                                                                        
+       135 Garner          Stanley            22                                                                                                                                                        
+
+6 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 20:
+SQL> 
+SQL> SELECT Fname, Lname, TO_CHAR(HireDate, 'MON')
+  2  FROM EMPLOYEE
+  3  WHERE TO_CHAR(HireDate, 'MON') = 'MAY';
+
+FNAME           LNAME           TO_CHAR(HIRE                                                                                                                                                            
+--------------- --------------- ------------                                                                                                                                                            
+Larry           Houston         MAY                                                                                                                                                                     
+Alex            McCall          MAY                                                                                                                                                                     
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> SPOOL OFF;

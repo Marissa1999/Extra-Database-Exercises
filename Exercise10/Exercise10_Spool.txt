@@ -1,0 +1,198 @@
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 1:
+SQL> 
+SQL> SELECT DeptName
+  2  FROM dept
+  3  WHERE DeptId = (SELECT DeptId
+  4                  FROM employee
+  5  WHERE FName = 'Jinku' AND LName = 'Shaw');
+
+DEPTNAME                                                                                                                                                                            
+------------                                                                                                                                                                        
+Sales                                                                                                                                                                               
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 2:
+SQL> 
+SQL> SELECT FName, LName
+  2  FROM employee
+  3  WHERE EmployeeId = (SELECT Supervisor
+  4                      FROM employee
+  5  WHERE EmployeeId = 433);
+
+FNAME           LNAME                                                                                                                                                               
+--------------- ---------------                                                                                                                                                     
+Derek           Dev                                                                                                                                                                 
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 3:
+SQL> 
+SQL> SELECT FName, LName
+  2  FROM employee
+  3  WHERE QualId = (SELECT QualId
+  4                  FROM employee
+  5  WHERE FName = 'John' AND LName = 'Smith')
+  6  AND FName <> 'John' AND LName <> 'Smith';
+
+FNAME           LNAME                                                                                                                                                               
+--------------- ---------------                                                                                                                                                     
+Derek           Dev                                                                                                                                                                 
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 4:
+SQL> 
+SQL> SELECT FName, LName
+  2  FROM employee
+  3  WHERE PositionId = (SELECT PositionId
+  4                      FROM employee
+  5  WHERE FName = 'Larry' AND LName = 'Houston')
+  6      AND FName <> 'Larry' AND LName <> 'Houston';
+
+FNAME           LNAME                                                                                                                                                               
+--------------- ---------------                                                                                                                                                     
+Sandi           Roberts                                                                                                                                                             
+Derek           Dev                                                                                                                                                                 
+Stanley         Garner                                                                                                                                                              
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 5:
+SQL> 
+SQL> SELECT DeptName
+  2  FROM dept
+  3  WHERE DeptId = (SELECT DeptId
+  4                  FROM employee
+  5  GROUP BY DeptId
+  6  HAVING COUNT(EmployeeId) > (SELECT COUNT(*)
+  7  FROM employee
+  8  WHERE DeptId = 20));
+
+DEPTNAME                                                                                                                                                                            
+------------                                                                                                                                                                        
+Finance                                                                                                                                                                             
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 6:
+SQL> 
+SQL> SELECT FName, LName
+  2  FROM employee
+  3  WHERE HireDate < (SELECT HireDate
+  4                      FROM employee
+  5  WHERE FName = 'Larry' AND LName = 'Houston');
+
+FNAME           LNAME                                                                                                                                                               
+--------------- ---------------                                                                                                                                                     
+John            Smith                                                                                                                                                               
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 7:
+SQL> 
+SQL> SELECT FName, LName
+  2  FROM employee
+  3  WHERE DeptId = (SELECT DeptId
+  4                  FROM dept
+  5  WHERE DeptName = 'Sales');
+
+FNAME           LNAME                                                                                                                                                               
+--------------- ---------------                                                                                                                                                     
+Jinku           Shaw                                                                                                                                                                
+Stanley         Garner                                                                                                                                                              
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 8:
+SQL> 
+SQL> SELECT EmployeeId, DependentId, DepDOB, Relation
+  2  FROM dependent
+  3  WHERE EmployeeId IN (SELECT EmployeeId
+  4                      FROM employee
+  5      WHERE DeptId = (SELECT DeptId
+  6                                      FROM dept
+  7                      WHERE DeptName = 'Finance'));
+
+EMPLOYEEID DEPENDENTID DEPDOB    RELATION                                                                                                                                           
+---------- ----------- --------- --------                                                                                                                                           
+       222           1 04-FEB-75 Spouse                                                                                                                                             
+       222           2 23-AUG-97 Son                                                                                                                                                
+       222           3 10-JUL-99 Daughter                                                                                                                                           
+       111           1 12-DEC-45 Spouse                                                                                                                                             
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 9:
+SQL> 
+SQL> SELECT Name, Phone
+  2  FROM faculty
+  3  WHERE FacultyId = (SELECT FacultyId
+  4                     FROM student
+  5     WHERE Last = 'Diaz');
+
+NAME            PHO                                                                                                                                                                 
+--------------- ---                                                                                                                                                                 
+Mobley          529                                                                                                                                                                 
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 10:
+SQL> 
+SQL> SELECT *
+  2  FROM location
+  3  WHERE Building = 'Nehru';
+
+    ROOMID BUILDIN ROO   CAPACITY R                                                                                                                                                 
+---------- ------- --- ---------- -                                                                                                                                                 
+        15 Nehru   301         50 C                                                                                                                                                 
+        16 Nehru   309         45 C                                                                                                                                                 
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> SPOOL OFF;

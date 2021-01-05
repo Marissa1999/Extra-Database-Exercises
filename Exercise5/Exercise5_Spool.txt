@@ -1,0 +1,1999 @@
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --A: Character: Upper, Lower, InitCap
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 1:
+SQL> 
+SQL> SELECT UPPER(last_name), LOWER(first_name), INITCAP(first_name||' '||last_name)
+  2  FROM employees;
+
+UPPER(LAST_NAME)          LOWER(FIRST_NAME)
+------------------------- --------------------
+INITCAP(FIRST_NAME||''||LAST_NAME)
+----------------------------------------------
+ABEL                      ellen
+Ellen Abel
+
+ANDE                      sundar
+Sundar Ande
+
+ATKINSON                  mozhe
+Mozhe Atkinson
+
+AUSTIN                    david
+David Austin
+
+BAER                      hermann
+Hermann Baer
+
+BAIDA                     shelli
+Shelli Baida
+
+BANDA                     amit
+Amit Banda
+
+BATES                     elizabeth
+Elizabeth Bates
+
+BELL                      sarah
+Sarah Bell
+
+BERNSTEIN                 david
+David Bernstein
+
+BISSOT                    laura
+Laura Bissot
+
+BLOOM                     harrison
+Harrison Bloom
+
+BULL                      alexis
+Alexis Bull
+
+CABRIO                    anthony
+Anthony Cabrio
+
+CAMBRAULT                 gerald
+Gerald Cambrault
+
+CAMBRAULT                 nanette
+Nanette Cambrault
+
+CHEN                      john
+John Chen
+
+CHUNG                     kelly
+Kelly Chung
+
+COLMENARES                karen
+Karen Colmenares
+
+DAVIES                    curtis
+Curtis Davies
+
+DE HAAN                   lex
+Lex De Haan
+
+DELLINGER                 julia
+Julia Dellinger
+
+DILLY                     jennifer
+Jennifer Dilly
+
+DORAN                     louise
+Louise Doran
+
+ERNST                     bruce
+Bruce Ernst
+
+ERRAZURIZ                 alberto
+Alberto Errazuriz
+
+EVERETT                   britney
+Britney Everett
+
+FAVIET                    daniel
+Daniel Faviet
+
+FAY                       pat
+Pat Fay
+
+FEENEY                    kevin
+Kevin Feeney
+
+FLEAUR                    jean
+Jean Fleaur
+
+FOX                       tayler
+Tayler Fox
+
+UPPER(LAST_NAME)          LOWER(FIRST_NAME)
+------------------------- --------------------
+INITCAP(FIRST_NAME||''||LAST_NAME)
+----------------------------------------------
+
+FRIPP                     adam
+Adam Fripp
+
+GATES                     timothy
+Timothy Gates
+
+GEE                       ki
+Ki Gee
+
+GEONI                     girard
+Girard Geoni
+
+GIETZ                     william
+William Gietz
+
+GRANT                     douglas
+Douglas Grant
+
+GRANT                     kimberely
+Kimberely Grant
+
+GREENBERG                 nancy
+Nancy Greenberg
+
+GREENE                    danielle
+Danielle Greene
+
+HALL                      peter
+Peter Hall
+
+HARTSTEIN                 michael
+Michael Hartstein
+
+HIGGINS                   shelley
+Shelley Higgins
+
+HIMURO                    guy
+Guy Himuro
+
+HUNOLD                    alexander
+Alexander Hunold
+
+HUTTON                    alyssa
+Alyssa Hutton
+
+JOHNSON                   charles
+Charles Johnson
+
+JONES                     vance
+Vance Jones
+
+KAUFLING                  payam
+Payam Kaufling
+
+KHOO                      alexander
+Alexander Khoo
+
+KING                      janette
+Janette King
+
+KING                      steven
+Steven King
+
+KOCHHAR                   neena
+Neena Kochhar
+
+KUMAR                     sundita
+Sundita Kumar
+
+LADWIG                    renske
+Renske Ladwig
+
+LANDRY                    james
+James Landry
+
+LEE                       david
+David Lee
+
+LIVINGSTON                jack
+Jack Livingston
+
+LORENTZ                   diana
+Diana Lorentz
+
+MALLIN                    jason
+Jason Mallin
+
+MARKLE                    steven
+Steven Markle
+
+MARLOW                    james
+James Marlow
+
+MARVINS                   mattea
+
+UPPER(LAST_NAME)          LOWER(FIRST_NAME)
+------------------------- --------------------
+INITCAP(FIRST_NAME||''||LAST_NAME)
+----------------------------------------------
+Mattea Marvins
+
+MATOS                     randall
+Randall Matos
+
+MAVRIS                    susan
+Susan Mavris
+
+MCCAIN                    samuel
+Samuel Mccain
+
+MCEWEN                    allan
+Allan Mcewen
+
+MIKKILINENI               irene
+Irene Mikkilineni
+
+MOURGOS                   kevin
+Kevin Mourgos
+
+NAYER                     julia
+Julia Nayer
+
+OCONNELL                  donald
+Donald Oconnell
+
+OLSEN                     christopher
+Christopher Olsen
+
+OLSON                     tj
+Tj Olson
+
+OZER                      lisa
+Lisa Ozer
+
+PARTNERS                  karen
+Karen Partners
+
+PATABALLA                 valli
+Valli Pataballa
+
+PATEL                     joshua
+Joshua Patel
+
+PERKINS                   randall
+Randall Perkins
+
+PHILTANKER                hazel
+Hazel Philtanker
+
+POPP                      luis
+Luis Popp
+
+RAJS                      trenna
+Trenna Rajs
+
+RAPHAELY                  den
+Den Raphaely
+
+ROGERS                    michael
+Michael Rogers
+
+RUSSELL                   john
+John Russell
+
+SARCHAND                  nandita
+Nandita Sarchand
+
+SCIARRA                   ismael
+Ismael Sciarra
+
+SEO                       john
+John Seo
+
+SEWALL                    sarath
+Sarath Sewall
+
+SMITH                     lindsey
+Lindsey Smith
+
+SMITH                     william
+William Smith
+
+STILES                    stephen
+Stephen Stiles
+
+SULLIVAN                  martha
+Martha Sullivan
+
+SULLY                     patrick
+Patrick Sully
+
+TAYLOR                    jonathon
+Jonathon Taylor
+
+
+UPPER(LAST_NAME)          LOWER(FIRST_NAME)
+------------------------- --------------------
+INITCAP(FIRST_NAME||''||LAST_NAME)
+----------------------------------------------
+TAYLOR                    winston
+Winston Taylor
+
+TOBIAS                    sigal
+Sigal Tobias
+
+TUCKER                    peter
+Peter Tucker
+
+TUVAULT                   oliver
+Oliver Tuvault
+
+URMAN                     jose manuel
+Jose Manuel Urman
+
+VARGAS                    peter
+Peter Vargas
+
+VISHNEY                   clara
+Clara Vishney
+
+VOLLMAN                   shanta
+Shanta Vollman
+
+WALSH                     alana
+Alana Walsh
+
+WEISS                     matthew
+Matthew Weiss
+
+WHALEN                    jennifer
+Jennifer Whalen
+
+ZLOTKEY                   eleni
+Eleni Zlotkey
+
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 2:
+SQL> 
+SQL> SELECT *
+  2  FROM departments
+  3  ORDER BY department_name;
+
+DEPARTMENT_ID DEPARTMENT_NAME                MANAGER_ID LOCATION_ID
+------------- ------------------------------ ---------- -----------
+          110 Accounting                            205        1700
+           10 Administration                        200        1700
+          160 Benefits                                         1700
+          180 Construction                                     1700
+          190 Contracting                                      1700
+          140 Control And Credit                               1700
+          130 Corporate Tax                                    1700
+           90 Executive                             100        1700
+          100 Finance                               108        1700
+          240 Government Sales                                 1700
+           40 Human Resources                       203        2400
+           60 IT                                    103        1400
+          230 IT Helpdesk                                      1700
+          210 IT Support                                       1700
+          170 Manufacturing                                    1700
+           20 Marketing                             201        1800
+          220 NOC                                              1700
+          200 Operations                                       1700
+          270 Payroll                                          1700
+           70 Public Relations                      204        2700
+           30 Purchasing                            114        1700
+          260 Recruiting                                       1700
+          250 Retail Sales                                     1700
+           80 Sales                                 145        2500
+          150 Shareholder Services                             1700
+           50 Shipping                              121        1500
+          120 Treasury                                         1700
+
+27 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 3:
+SQL> 
+SQL> SELECT *
+  2  FROM departments
+  3  ORDER BY LENGTH(department_name);
+
+DEPARTMENT_ID DEPARTMENT_NAME                MANAGER_ID LOCATION_ID
+------------- ------------------------------ ---------- -----------
+           60 IT                                    103        1400
+          220 NOC                                              1700
+           80 Sales                                 145        2500
+          270 Payroll                                          1700
+          100 Finance                               108        1700
+          160 Benefits                                         1700
+          120 Treasury                                         1700
+           50 Shipping                              121        1500
+           90 Executive                             100        1700
+           20 Marketing                             201        1800
+          110 Accounting                            205        1700
+           30 Purchasing                            114        1700
+          260 Recruiting                                       1700
+          210 IT Support                                       1700
+          200 Operations                                       1700
+          230 IT Helpdesk                                      1700
+          190 Contracting                                      1700
+          180 Construction                                     1700
+          250 Retail Sales                                     1700
+          170 Manufacturing                                    1700
+          130 Corporate Tax                                    1700
+           10 Administration                        200        1700
+           40 Human Resources                       203        2400
+           70 Public Relations                      204        2700
+          240 Government Sales                                 1700
+          140 Control And Credit                               1700
+          150 Shareholder Services                             1700
+
+27 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 4:
+SQL> 
+SQL> SELECT department_name
+  2  FROM departments
+  3  HAVING LENGTH(department_name) = MAX(LENGTH(department_name))
+  4  GROUP BY department_name;
+
+DEPARTMENT_NAME
+------------------------------
+Administration
+Treasury
+Accounting
+Manufacturing
+Construction
+Government Sales
+Purchasing
+Human Resources
+IT
+Public Relations
+Executive
+Benefits
+Shipping
+Corporate Tax
+Contracting
+NOC
+Retail Sales
+Recruiting
+Payroll
+Control And Credit
+Shareholder Services
+Sales
+Finance
+Marketing
+IT Helpdesk
+Operations
+IT Support
+
+27 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 5:
+SQL> 
+SQL> SELECT last_name, first_name, LPAD(salary, 7, '$')
+  2  FROM employees;
+
+LAST_NAME                 FIRST_NAME           LPAD(SALARY,7,'$')
+------------------------- -------------------- ----------------------------
+King                      Steven               $$24000
+Kochhar                   Neena                $$17000
+De Haan                   Lex                  $$17000
+Hunold                    Alexander            $$$9000
+Ernst                     Bruce                $$$6000
+Austin                    David                $$$4800
+Pataballa                 Valli                $$$4800
+Lorentz                   Diana                $$$4200
+Greenberg                 Nancy                $$12000
+Faviet                    Daniel               $$$9000
+Chen                      John                 $$$8200
+Sciarra                   Ismael               $$$7700
+Urman                     Jose Manuel          $$$7800
+Popp                      Luis                 $$$6900
+Raphaely                  Den                  $$11000
+Khoo                      Alexander            $$$3100
+Baida                     Shelli               $$$2900
+Tobias                    Sigal                $$$2800
+Himuro                    Guy                  $$$2600
+Colmenares                Karen                $$$2500
+Weiss                     Matthew              $$$8000
+Fripp                     Adam                 $$$8200
+Kaufling                  Payam                $$$7900
+Vollman                   Shanta               $$$6500
+Mourgos                   Kevin                $$$5800
+Nayer                     Julia                $$$3200
+Mikkilineni               Irene                $$$2700
+Landry                    James                $$$2400
+Markle                    Steven               $$$2200
+Bissot                    Laura                $$$3300
+Atkinson                  Mozhe                $$$2800
+Marlow                    James                $$$2500
+Olson                     TJ                   $$$2100
+Mallin                    Jason                $$$3300
+Rogers                    Michael              $$$2900
+Gee                       Ki                   $$$2400
+Philtanker                Hazel                $$$2200
+Ladwig                    Renske               $$$3600
+Stiles                    Stephen              $$$3200
+Seo                       John                 $$$2700
+Patel                     Joshua               $$$2500
+Rajs                      Trenna               $$$3500
+Davies                    Curtis               $$$3100
+Matos                     Randall              $$$2600
+Vargas                    Peter                $$$2500
+Russell                   John                 $$14000
+Partners                  Karen                $$13500
+Errazuriz                 Alberto              $$12000
+Cambrault                 Gerald               $$11000
+Zlotkey                   Eleni                $$10500
+Tucker                    Peter                $$10000
+Bernstein                 David                $$$9500
+Hall                      Peter                $$$9000
+Olsen                     Christopher          $$$8000
+Cambrault                 Nanette              $$$7500
+Tuvault                   Oliver               $$$7000
+King                      Janette              $$10000
+Sully                     Patrick              $$$9500
+McEwen                    Allan                $$$9000
+Smith                     Lindsey              $$$8000
+Doran                     Louise               $$$7500
+Sewall                    Sarath               $$$7000
+Vishney                   Clara                $$10500
+Greene                    Danielle             $$$9500
+Marvins                   Mattea               $$$7200
+Lee                       David                $$$6800
+Ande                      Sundar               $$$6400
+Banda                     Amit                 $$$6200
+Ozer                      Lisa                 $$11500
+Bloom                     Harrison             $$10000
+Fox                       Tayler               $$$9600
+Smith                     William              $$$7400
+Bates                     Elizabeth            $$$7300
+Kumar                     Sundita              $$$6100
+Abel                      Ellen                $$11000
+Hutton                    Alyssa               $$$8800
+Taylor                    Jonathon             $$$8600
+Livingston                Jack                 $$$8400
+Grant                     Kimberely            $$$7000
+Johnson                   Charles              $$$6200
+Taylor                    Winston              $$$3200
+Fleaur                    Jean                 $$$3100
+Sullivan                  Martha               $$$2500
+Geoni                     Girard               $$$2800
+Sarchand                  Nandita              $$$4200
+Bull                      Alexis               $$$4100
+Dellinger                 Julia                $$$3400
+Cabrio                    Anthony              $$$3000
+Chung                     Kelly                $$$3800
+Dilly                     Jennifer             $$$3600
+Gates                     Timothy              $$$2900
+Perkins                   Randall              $$$2500
+Bell                      Sarah                $$$4000
+Everett                   Britney              $$$3900
+McCain                    Samuel               $$$3200
+Jones                     Vance                $$$2800
+Walsh                     Alana                $$$3100
+
+LAST_NAME                 FIRST_NAME           LPAD(SALARY,7,'$')
+------------------------- -------------------- ----------------------------
+Feeney                    Kevin                $$$3000
+OConnell                  Donald               $$$2600
+Grant                     Douglas              $$$2600
+Whalen                    Jennifer             $$$4400
+Hartstein                 Michael              $$13000
+Fay                       Pat                  $$$6000
+Mavris                    Susan                $$$6500
+Baer                      Hermann              $$10000
+Higgins                   Shelley              $$12000
+Gietz                     William              $$$8300
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 6:
+SQL> 
+SQL> SELECT last_name, first_name, LPAD(salary, 7, '*')
+  2  FROM employees;
+
+LAST_NAME                 FIRST_NAME           LPAD(SALARY,7,'*')
+------------------------- -------------------- ----------------------------
+King                      Steven               **24000
+Kochhar                   Neena                **17000
+De Haan                   Lex                  **17000
+Hunold                    Alexander            ***9000
+Ernst                     Bruce                ***6000
+Austin                    David                ***4800
+Pataballa                 Valli                ***4800
+Lorentz                   Diana                ***4200
+Greenberg                 Nancy                **12000
+Faviet                    Daniel               ***9000
+Chen                      John                 ***8200
+Sciarra                   Ismael               ***7700
+Urman                     Jose Manuel          ***7800
+Popp                      Luis                 ***6900
+Raphaely                  Den                  **11000
+Khoo                      Alexander            ***3100
+Baida                     Shelli               ***2900
+Tobias                    Sigal                ***2800
+Himuro                    Guy                  ***2600
+Colmenares                Karen                ***2500
+Weiss                     Matthew              ***8000
+Fripp                     Adam                 ***8200
+Kaufling                  Payam                ***7900
+Vollman                   Shanta               ***6500
+Mourgos                   Kevin                ***5800
+Nayer                     Julia                ***3200
+Mikkilineni               Irene                ***2700
+Landry                    James                ***2400
+Markle                    Steven               ***2200
+Bissot                    Laura                ***3300
+Atkinson                  Mozhe                ***2800
+Marlow                    James                ***2500
+Olson                     TJ                   ***2100
+Mallin                    Jason                ***3300
+Rogers                    Michael              ***2900
+Gee                       Ki                   ***2400
+Philtanker                Hazel                ***2200
+Ladwig                    Renske               ***3600
+Stiles                    Stephen              ***3200
+Seo                       John                 ***2700
+Patel                     Joshua               ***2500
+Rajs                      Trenna               ***3500
+Davies                    Curtis               ***3100
+Matos                     Randall              ***2600
+Vargas                    Peter                ***2500
+Russell                   John                 **14000
+Partners                  Karen                **13500
+Errazuriz                 Alberto              **12000
+Cambrault                 Gerald               **11000
+Zlotkey                   Eleni                **10500
+Tucker                    Peter                **10000
+Bernstein                 David                ***9500
+Hall                      Peter                ***9000
+Olsen                     Christopher          ***8000
+Cambrault                 Nanette              ***7500
+Tuvault                   Oliver               ***7000
+King                      Janette              **10000
+Sully                     Patrick              ***9500
+McEwen                    Allan                ***9000
+Smith                     Lindsey              ***8000
+Doran                     Louise               ***7500
+Sewall                    Sarath               ***7000
+Vishney                   Clara                **10500
+Greene                    Danielle             ***9500
+Marvins                   Mattea               ***7200
+Lee                       David                ***6800
+Ande                      Sundar               ***6400
+Banda                     Amit                 ***6200
+Ozer                      Lisa                 **11500
+Bloom                     Harrison             **10000
+Fox                       Tayler               ***9600
+Smith                     William              ***7400
+Bates                     Elizabeth            ***7300
+Kumar                     Sundita              ***6100
+Abel                      Ellen                **11000
+Hutton                    Alyssa               ***8800
+Taylor                    Jonathon             ***8600
+Livingston                Jack                 ***8400
+Grant                     Kimberely            ***7000
+Johnson                   Charles              ***6200
+Taylor                    Winston              ***3200
+Fleaur                    Jean                 ***3100
+Sullivan                  Martha               ***2500
+Geoni                     Girard               ***2800
+Sarchand                  Nandita              ***4200
+Bull                      Alexis               ***4100
+Dellinger                 Julia                ***3400
+Cabrio                    Anthony              ***3000
+Chung                     Kelly                ***3800
+Dilly                     Jennifer             ***3600
+Gates                     Timothy              ***2900
+Perkins                   Randall              ***2500
+Bell                      Sarah                ***4000
+Everett                   Britney              ***3900
+McCain                    Samuel               ***3200
+Jones                     Vance                ***2800
+Walsh                     Alana                ***3100
+
+LAST_NAME                 FIRST_NAME           LPAD(SALARY,7,'*')
+------------------------- -------------------- ----------------------------
+Feeney                    Kevin                ***3000
+OConnell                  Donald               ***2600
+Grant                     Douglas              ***2600
+Whalen                    Jennifer             ***4400
+Hartstein                 Michael              **13000
+Fay                       Pat                  ***6000
+Mavris                    Susan                ***6500
+Baer                      Hermann              **10000
+Higgins                   Shelley              **12000
+Gietz                     William              ***8300
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --B: Numeric Functions
+SQL> 
+SQL> 
+SQL> --Question 7:
+SQL> 
+SQL> SELECT ROUND(5.55, 1), TRUNC(5.55), POWER(2,3), FLOOR(5.5), CEIL(5.5)
+  2  FROM dual;
+
+ROUND(5.55,1) TRUNC(5.55) POWER(2,3) FLOOR(5.5)  CEIL(5.5)
+------------- ----------- ---------- ---------- ----------
+          5.6           5          8          5          6
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> DESCRIBE dual
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DUMMY                                              VARCHAR2(1)
+
+SQL> SELECT * FROM dual;
+
+D
+-
+X
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --C: Dates
+SQL> 
+SQL> 
+SQL> --Question 8:
+SQL> 
+SQL> SELECT SYSDATE
+  2  FROM dual;
+
+SYSDATE
+---------
+02-OCT-18
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> SELECT TO_CHAR(SYSDATE, 'DY, MONTH DD, YYYY HH:MI:SS P.M.')
+  2  FROM dual;
+
+TO_CHAR(SYSDATE,'DY,MONTHDD,YYYYHH:MI:SSP.M.')
+-------------------------------------------------------------------------
+TUE, OCTOBER   02, 2018 01:52:53 P.M.
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> SELECT TO_CHAR(SYSDATE, 'Day, MONTH DD, YYYY HH:MI:SS A.M.')
+  2  FROM dual;
+
+TO_CHAR(SYSDATE,'DAY,MONTHDD,YYYYHH:MI:SSA.M.')
+--------------------------------------------------------------------------------
+Tuesday  , OCTOBER   02, 2018 01:52:53 P.M.
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 9:
+SQL> 
+SQL> SELECT SYSDATE + 32
+  2  FROM dual;
+
+SYSDATE+3
+---------
+03-NOV-18
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 10:
+SQL> 
+SQL> SELECT TO_DATE('8-NOV-15', 'DD-MON-YY') - SYSDATE
+  2  FROM dual;
+
+TO_DATE('8-NOV-15','DD-MON-YY')-SYSDATE
+---------------------------------------
+                             -1059.5784
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 11:
+SQL> 
+SQL> SELECT SYSDATE - TO_DATE('20-AUG-15', 'DD-MON-YY')
+  2  FROM dual;
+
+SYSDATE-TO_DATE('20-AUG-15','DD-MON-YY')
+----------------------------------------
+                              1139.57839
+
+1 row selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 12:
+SQL> 
+SQL> SELECT last_name, first_name, TRUNC((SYSDATE - hire_date) / 365.24) AS "Seniority"
+  2  FROM employees;
+
+LAST_NAME                 FIRST_NAME            Seniority
+------------------------- -------------------- ----------
+King                      Steven                       31
+Kochhar                   Neena                        29
+De Haan                   Lex                          25
+Hunold                    Alexander                    28
+Ernst                     Bruce                        27
+Austin                    David                        21
+Pataballa                 Valli                        20
+Lorentz                   Diana                        19
+Greenberg                 Nancy                        24
+Faviet                    Daniel                       24
+Chen                      John                         21
+Sciarra                   Ismael                       21
+Urman                     Jose Manuel                  20
+Popp                      Luis                         18
+Raphaely                  Den                          23
+Khoo                      Alexander                    23
+Baida                     Shelli                       20
+Tobias                    Sigal                        21
+Himuro                    Guy                          19
+Colmenares                Karen                        19
+Weiss                     Matthew                      22
+Fripp                     Adam                         21
+Kaufling                  Payam                        23
+Vollman                   Shanta                       20
+Mourgos                   Kevin                        18
+Nayer                     Julia                        21
+Mikkilineni               Irene                        20
+Landry                    James                        19
+Markle                    Steven                       18
+Bissot                    Laura                        21
+Atkinson                  Mozhe                        20
+Marlow                    James                        21
+Olson                     TJ                           19
+Mallin                    Jason                        22
+Rogers                    Michael                      20
+Gee                       Ki                           18
+Philtanker                Hazel                        18
+Ladwig                    Renske                       23
+Stiles                    Stephen                      20
+Seo                       John                         20
+Patel                     Joshua                       20
+Rajs                      Trenna                       22
+Davies                    Curtis                       21
+Matos                     Randall                      20
+Vargas                    Peter                        20
+Russell                   John                         22
+Partners                  Karen                        21
+Errazuriz                 Alberto                      21
+Cambrault                 Gerald                       18
+Zlotkey                   Eleni                        18
+Tucker                    Peter                        21
+Bernstein                 David                        21
+Hall                      Peter                        21
+Olsen                     Christopher                  20
+Cambrault                 Nanette                      19
+Tuvault                   Oliver                       18
+King                      Janette                      22
+Sully                     Patrick                      22
+McEwen                    Allan                        22
+Smith                     Lindsey                      21
+Doran                     Louise                       20
+Sewall                    Sarath                       19
+Vishney                   Clara                        20
+Greene                    Danielle                     19
+Marvins                   Mattea                       18
+Lee                       David                        18
+Ande                      Sundar                       18
+Banda                     Amit                         18
+Ozer                      Lisa                         21
+Bloom                     Harrison                     20
+Fox                       Tayler                       20
+Smith                     William                      19
+Bates                     Elizabeth                    19
+Kumar                     Sundita                      18
+Abel                      Ellen                        22
+Hutton                    Alyssa                       21
+Taylor                    Jonathon                     20
+Livingston                Jack                         20
+Grant                     Kimberely                    19
+Johnson                   Charles                      18
+Taylor                    Winston                      20
+Fleaur                    Jean                         20
+Sullivan                  Martha                       19
+Geoni                     Girard                       18
+Sarchand                  Nandita                      22
+Bull                      Alexis                       21
+Dellinger                 Julia                        20
+Cabrio                    Anthony                      19
+Chung                     Kelly                        21
+Dilly                     Jennifer                     21
+Gates                     Timothy                      20
+Perkins                   Randall                      18
+Bell                      Sarah                        22
+Everett                   Britney                      21
+McCain                    Samuel                       20
+Jones                     Vance                        19
+Walsh                     Alana                        20
+
+LAST_NAME                 FIRST_NAME            Seniority
+------------------------- -------------------- ----------
+Feeney                    Kevin                        20
+OConnell                  Donald                       19
+Grant                     Douglas                      18
+Whalen                    Jennifer                     31
+Hartstein                 Michael                      22
+Fay                       Pat                          21
+Mavris                    Susan                        24
+Baer                      Hermann                      24
+Higgins                   Shelley                      24
+Gietz                     William                      24
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --D: Handling Null Values
+SQL> 
+SQL> 
+SQL> --Question 13:
+SQL> 
+SQL> SELECT employee_id, salary, commission_pct,
+  2  salary * (1 + commission_pct / 100) AS "Total Compensation"
+  3  FROM employees;
+
+EMPLOYEE_ID     SALARY COMMISSION_PCT Total Compensation
+----------- ---------- -------------- ------------------
+        100      24000
+        101      17000
+        102      17000
+        103       9000
+        104       6000
+        105       4800
+        106       4800
+        107       4200
+        108      12000
+        109       9000
+        110       8200
+        111       7700
+        112       7800
+        113       6900
+        114      11000
+        115       3100
+        116       2900
+        117       2800
+        118       2600
+        119       2500
+        120       8000
+        121       8200
+        122       7900
+        123       6500
+        124       5800
+        125       3200
+        126       2700
+        127       2400
+        128       2200
+        129       3300
+        130       2800
+        131       2500
+        132       2100
+        133       3300
+        134       2900
+        135       2400
+        136       2200
+        137       3600
+        138       3200
+        139       2700
+        140       2500
+        141       3500
+        142       3100
+        143       2600
+        144       2500
+        145      14000             .4              14056
+        146      13500             .3            13540.5
+        147      12000             .3              12036
+        148      11000             .3              11033
+        149      10500             .2              10521
+        150      10000             .3              10030
+        151       9500            .25            9523.75
+        152       9000            .25             9022.5
+        153       8000             .2               8016
+        154       7500             .2               7515
+        155       7000            .15             7010.5
+        156      10000            .35              10035
+        157       9500            .35            9533.25
+        158       9000            .35             9031.5
+        159       8000             .3               8024
+        160       7500             .3             7522.5
+        161       7000            .25             7017.5
+        162      10500            .25           10526.25
+        163       9500            .15            9514.25
+        164       7200             .1             7207.2
+        165       6800             .1             6806.8
+        166       6400             .1             6406.4
+        167       6200             .1             6206.2
+        168      11500            .25           11528.75
+        169      10000             .2              10020
+        170       9600             .2             9619.2
+        171       7400            .15             7411.1
+        172       7300            .15            7310.95
+        173       6100             .1             6106.1
+        174      11000             .3              11033
+        175       8800            .25               8822
+        176       8600             .2             8617.2
+        177       8400             .2             8416.8
+        178       7000            .15             7010.5
+        179       6200             .1             6206.2
+        180       3200
+        181       3100
+        182       2500
+        183       2800
+        184       4200
+        185       4100
+        186       3400
+        187       3000
+        188       3800
+        189       3600
+        190       2900
+        191       2500
+        192       4000
+        193       3900
+        194       3200
+        195       2800
+        196       3100
+
+EMPLOYEE_ID     SALARY COMMISSION_PCT Total Compensation
+----------- ---------- -------------- ------------------
+        197       3000
+        198       2600
+        199       2600
+        200       4400
+        201      13000
+        202       6000
+        203       6500
+        204      10000
+        205      12000
+        206       8300
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> SELECT employee_id, salary, commission_pct,
+  2  salary * (1 + NVL(commission_pct, 0) / 100) AS "Total Compensation"
+  3  FROM employees;
+
+EMPLOYEE_ID     SALARY COMMISSION_PCT Total Compensation
+----------- ---------- -------------- ------------------
+        100      24000                             24000
+        101      17000                             17000
+        102      17000                             17000
+        103       9000                              9000
+        104       6000                              6000
+        105       4800                              4800
+        106       4800                              4800
+        107       4200                              4200
+        108      12000                             12000
+        109       9000                              9000
+        110       8200                              8200
+        111       7700                              7700
+        112       7800                              7800
+        113       6900                              6900
+        114      11000                             11000
+        115       3100                              3100
+        116       2900                              2900
+        117       2800                              2800
+        118       2600                              2600
+        119       2500                              2500
+        120       8000                              8000
+        121       8200                              8200
+        122       7900                              7900
+        123       6500                              6500
+        124       5800                              5800
+        125       3200                              3200
+        126       2700                              2700
+        127       2400                              2400
+        128       2200                              2200
+        129       3300                              3300
+        130       2800                              2800
+        131       2500                              2500
+        132       2100                              2100
+        133       3300                              3300
+        134       2900                              2900
+        135       2400                              2400
+        136       2200                              2200
+        137       3600                              3600
+        138       3200                              3200
+        139       2700                              2700
+        140       2500                              2500
+        141       3500                              3500
+        142       3100                              3100
+        143       2600                              2600
+        144       2500                              2500
+        145      14000             .4              14056
+        146      13500             .3            13540.5
+        147      12000             .3              12036
+        148      11000             .3              11033
+        149      10500             .2              10521
+        150      10000             .3              10030
+        151       9500            .25            9523.75
+        152       9000            .25             9022.5
+        153       8000             .2               8016
+        154       7500             .2               7515
+        155       7000            .15             7010.5
+        156      10000            .35              10035
+        157       9500            .35            9533.25
+        158       9000            .35             9031.5
+        159       8000             .3               8024
+        160       7500             .3             7522.5
+        161       7000            .25             7017.5
+        162      10500            .25           10526.25
+        163       9500            .15            9514.25
+        164       7200             .1             7207.2
+        165       6800             .1             6806.8
+        166       6400             .1             6406.4
+        167       6200             .1             6206.2
+        168      11500            .25           11528.75
+        169      10000             .2              10020
+        170       9600             .2             9619.2
+        171       7400            .15             7411.1
+        172       7300            .15            7310.95
+        173       6100             .1             6106.1
+        174      11000             .3              11033
+        175       8800            .25               8822
+        176       8600             .2             8617.2
+        177       8400             .2             8416.8
+        178       7000            .15             7010.5
+        179       6200             .1             6206.2
+        180       3200                              3200
+        181       3100                              3100
+        182       2500                              2500
+        183       2800                              2800
+        184       4200                              4200
+        185       4100                              4100
+        186       3400                              3400
+        187       3000                              3000
+        188       3800                              3800
+        189       3600                              3600
+        190       2900                              2900
+        191       2500                              2500
+        192       4000                              4000
+        193       3900                              3900
+        194       3200                              3200
+        195       2800                              2800
+        196       3100                              3100
+
+EMPLOYEE_ID     SALARY COMMISSION_PCT Total Compensation
+----------- ---------- -------------- ------------------
+        197       3000                              3000
+        198       2600                              2600
+        199       2600                              2600
+        200       4400                              4400
+        201      13000                             13000
+        202       6000                              6000
+        203       6500                              6500
+        204      10000                             10000
+        205      12000                             12000
+        206       8300                              8300
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 14:
+SQL> 
+SQL> SELECT employee_id, last_name, first_name,
+  2  NVL2(commission_pct, 'earns commission', 'no commission')
+  3  FROM employees;
+
+EMPLOYEE_ID LAST_NAME                 FIRST_NAME           NVL2(COMMISSION_
+----------- ------------------------- -------------------- ----------------
+        100 King                      Steven               no commission
+        101 Kochhar                   Neena                no commission
+        102 De Haan                   Lex                  no commission
+        103 Hunold                    Alexander            no commission
+        104 Ernst                     Bruce                no commission
+        105 Austin                    David                no commission
+        106 Pataballa                 Valli                no commission
+        107 Lorentz                   Diana                no commission
+        108 Greenberg                 Nancy                no commission
+        109 Faviet                    Daniel               no commission
+        110 Chen                      John                 no commission
+        111 Sciarra                   Ismael               no commission
+        112 Urman                     Jose Manuel          no commission
+        113 Popp                      Luis                 no commission
+        114 Raphaely                  Den                  no commission
+        115 Khoo                      Alexander            no commission
+        116 Baida                     Shelli               no commission
+        117 Tobias                    Sigal                no commission
+        118 Himuro                    Guy                  no commission
+        119 Colmenares                Karen                no commission
+        120 Weiss                     Matthew              no commission
+        121 Fripp                     Adam                 no commission
+        122 Kaufling                  Payam                no commission
+        123 Vollman                   Shanta               no commission
+        124 Mourgos                   Kevin                no commission
+        125 Nayer                     Julia                no commission
+        126 Mikkilineni               Irene                no commission
+        127 Landry                    James                no commission
+        128 Markle                    Steven               no commission
+        129 Bissot                    Laura                no commission
+        130 Atkinson                  Mozhe                no commission
+        131 Marlow                    James                no commission
+        132 Olson                     TJ                   no commission
+        133 Mallin                    Jason                no commission
+        134 Rogers                    Michael              no commission
+        135 Gee                       Ki                   no commission
+        136 Philtanker                Hazel                no commission
+        137 Ladwig                    Renske               no commission
+        138 Stiles                    Stephen              no commission
+        139 Seo                       John                 no commission
+        140 Patel                     Joshua               no commission
+        141 Rajs                      Trenna               no commission
+        142 Davies                    Curtis               no commission
+        143 Matos                     Randall              no commission
+        144 Vargas                    Peter                no commission
+        145 Russell                   John                 earns commission
+        146 Partners                  Karen                earns commission
+        147 Errazuriz                 Alberto              earns commission
+        148 Cambrault                 Gerald               earns commission
+        149 Zlotkey                   Eleni                earns commission
+        150 Tucker                    Peter                earns commission
+        151 Bernstein                 David                earns commission
+        152 Hall                      Peter                earns commission
+        153 Olsen                     Christopher          earns commission
+        154 Cambrault                 Nanette              earns commission
+        155 Tuvault                   Oliver               earns commission
+        156 King                      Janette              earns commission
+        157 Sully                     Patrick              earns commission
+        158 McEwen                    Allan                earns commission
+        159 Smith                     Lindsey              earns commission
+        160 Doran                     Louise               earns commission
+        161 Sewall                    Sarath               earns commission
+        162 Vishney                   Clara                earns commission
+        163 Greene                    Danielle             earns commission
+        164 Marvins                   Mattea               earns commission
+        165 Lee                       David                earns commission
+        166 Ande                      Sundar               earns commission
+        167 Banda                     Amit                 earns commission
+        168 Ozer                      Lisa                 earns commission
+        169 Bloom                     Harrison             earns commission
+        170 Fox                       Tayler               earns commission
+        171 Smith                     William              earns commission
+        172 Bates                     Elizabeth            earns commission
+        173 Kumar                     Sundita              earns commission
+        174 Abel                      Ellen                earns commission
+        175 Hutton                    Alyssa               earns commission
+        176 Taylor                    Jonathon             earns commission
+        177 Livingston                Jack                 earns commission
+        178 Grant                     Kimberely            earns commission
+        179 Johnson                   Charles              earns commission
+        180 Taylor                    Winston              no commission
+        181 Fleaur                    Jean                 no commission
+        182 Sullivan                  Martha               no commission
+        183 Geoni                     Girard               no commission
+        184 Sarchand                  Nandita              no commission
+        185 Bull                      Alexis               no commission
+        186 Dellinger                 Julia                no commission
+        187 Cabrio                    Anthony              no commission
+        188 Chung                     Kelly                no commission
+        189 Dilly                     Jennifer             no commission
+        190 Gates                     Timothy              no commission
+        191 Perkins                   Randall              no commission
+        192 Bell                      Sarah                no commission
+        193 Everett                   Britney              no commission
+        194 McCain                    Samuel               no commission
+        195 Jones                     Vance                no commission
+        196 Walsh                     Alana                no commission
+
+EMPLOYEE_ID LAST_NAME                 FIRST_NAME           NVL2(COMMISSION_
+----------- ------------------------- -------------------- ----------------
+        197 Feeney                    Kevin                no commission
+        198 OConnell                  Donald               no commission
+        199 Grant                     Douglas              no commission
+        200 Whalen                    Jennifer             no commission
+        201 Hartstein                 Michael              no commission
+        202 Fay                       Pat                  no commission
+        203 Mavris                    Susan                no commission
+        204 Baer                      Hermann              no commission
+        205 Higgins                   Shelley              no commission
+        206 Gietz                     William              no commission
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --E: Conversion Functions
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 15:
+SQL> 
+SQL> SELECT employee_id, TO_CHAR(salary / 31, '$999,999.99') AS "Daily Salary"
+  2  FROM employees;
+
+EMPLOYEE_ID Daily Salary
+----------- ------------
+        100      $774.19
+        101      $548.39
+        102      $548.39
+        103      $290.32
+        104      $193.55
+        105      $154.84
+        106      $154.84
+        107      $135.48
+        108      $387.10
+        109      $290.32
+        110      $264.52
+        111      $248.39
+        112      $251.61
+        113      $222.58
+        114      $354.84
+        115      $100.00
+        116       $93.55
+        117       $90.32
+        118       $83.87
+        119       $80.65
+        120      $258.06
+        121      $264.52
+        122      $254.84
+        123      $209.68
+        124      $187.10
+        125      $103.23
+        126       $87.10
+        127       $77.42
+        128       $70.97
+        129      $106.45
+        130       $90.32
+        131       $80.65
+        132       $67.74
+        133      $106.45
+        134       $93.55
+        135       $77.42
+        136       $70.97
+        137      $116.13
+        138      $103.23
+        139       $87.10
+        140       $80.65
+        141      $112.90
+        142      $100.00
+        143       $83.87
+        144       $80.65
+        145      $451.61
+        146      $435.48
+        147      $387.10
+        148      $354.84
+        149      $338.71
+        150      $322.58
+        151      $306.45
+        152      $290.32
+        153      $258.06
+        154      $241.94
+        155      $225.81
+        156      $322.58
+        157      $306.45
+        158      $290.32
+        159      $258.06
+        160      $241.94
+        161      $225.81
+        162      $338.71
+        163      $306.45
+        164      $232.26
+        165      $219.35
+        166      $206.45
+        167      $200.00
+        168      $370.97
+        169      $322.58
+        170      $309.68
+        171      $238.71
+        172      $235.48
+        173      $196.77
+        174      $354.84
+        175      $283.87
+        176      $277.42
+        177      $270.97
+        178      $225.81
+        179      $200.00
+        180      $103.23
+        181      $100.00
+        182       $80.65
+        183       $90.32
+        184      $135.48
+        185      $132.26
+        186      $109.68
+        187       $96.77
+        188      $122.58
+        189      $116.13
+        190       $93.55
+        191       $80.65
+        192      $129.03
+        193      $125.81
+        194      $103.23
+        195       $90.32
+        196      $100.00
+
+EMPLOYEE_ID Daily Salary
+----------- ------------
+        197       $96.77
+        198       $83.87
+        199       $83.87
+        200      $141.94
+        201      $419.35
+        202      $193.55
+        203      $209.68
+        204      $322.58
+        205      $387.10
+        206      $267.74
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 16:
+SQL> 
+SQL> SELECT last_name, first_name, TO_CHAR(hire_date, 'Month DD, YYYY') AS "Hire Date"
+  2  FROM employees;
+
+LAST_NAME                 FIRST_NAME
+------------------------- --------------------
+Hire Date
+---------------------------------------------
+King                      Steven
+June      17, 1987
+
+Kochhar                   Neena
+September 21, 1989
+
+De Haan                   Lex
+January   13, 1993
+
+Hunold                    Alexander
+January   03, 1990
+
+Ernst                     Bruce
+May       21, 1991
+
+Austin                    David
+June      25, 1997
+
+Pataballa                 Valli
+February  05, 1998
+
+Lorentz                   Diana
+February  07, 1999
+
+Greenberg                 Nancy
+August    17, 1994
+
+Faviet                    Daniel
+August    16, 1994
+
+Chen                      John
+September 28, 1997
+
+Sciarra                   Ismael
+September 30, 1997
+
+Urman                     Jose Manuel
+March     07, 1998
+
+Popp                      Luis
+December  07, 1999
+
+Raphaely                  Den
+December  07, 1994
+
+Khoo                      Alexander
+May       18, 1995
+
+Baida                     Shelli
+December  24, 1997
+
+Tobias                    Sigal
+July      24, 1997
+
+Himuro                    Guy
+November  15, 1998
+
+Colmenares                Karen
+August    10, 1999
+
+Weiss                     Matthew
+July      18, 1996
+
+Fripp                     Adam
+April     10, 1997
+
+Kaufling                  Payam
+May       01, 1995
+
+Vollman                   Shanta
+October   10, 1997
+
+Mourgos                   Kevin
+November  16, 1999
+
+Nayer                     Julia
+July      16, 1997
+
+Mikkilineni               Irene
+September 28, 1998
+
+Landry                    James
+January   14, 1999
+
+Markle                    Steven
+March     08, 2000
+
+Bissot                    Laura
+August    20, 1997
+
+Atkinson                  Mozhe
+October   30, 1997
+
+Marlow                    James
+February  16, 1997
+
+LAST_NAME                 FIRST_NAME
+------------------------- --------------------
+Hire Date
+---------------------------------------------
+
+Olson                     TJ
+April     10, 1999
+
+Mallin                    Jason
+June      14, 1996
+
+Rogers                    Michael
+August    26, 1998
+
+Gee                       Ki
+December  12, 1999
+
+Philtanker                Hazel
+February  06, 2000
+
+Ladwig                    Renske
+July      14, 1995
+
+Stiles                    Stephen
+October   26, 1997
+
+Seo                       John
+February  12, 1998
+
+Patel                     Joshua
+April     06, 1998
+
+Rajs                      Trenna
+October   17, 1995
+
+Davies                    Curtis
+January   29, 1997
+
+Matos                     Randall
+March     15, 1998
+
+Vargas                    Peter
+July      09, 1998
+
+Russell                   John
+October   01, 1996
+
+Partners                  Karen
+January   05, 1997
+
+Errazuriz                 Alberto
+March     10, 1997
+
+Cambrault                 Gerald
+October   15, 1999
+
+Zlotkey                   Eleni
+January   29, 2000
+
+Tucker                    Peter
+January   30, 1997
+
+Bernstein                 David
+March     24, 1997
+
+Hall                      Peter
+August    20, 1997
+
+Olsen                     Christopher
+March     30, 1998
+
+Cambrault                 Nanette
+December  09, 1998
+
+Tuvault                   Oliver
+November  23, 1999
+
+King                      Janette
+January   30, 1996
+
+Sully                     Patrick
+March     04, 1996
+
+McEwen                    Allan
+August    01, 1996
+
+Smith                     Lindsey
+March     10, 1997
+
+Doran                     Louise
+December  15, 1997
+
+Sewall                    Sarath
+November  03, 1998
+
+Vishney                   Clara
+November  11, 1997
+
+Greene                    Danielle
+
+LAST_NAME                 FIRST_NAME
+------------------------- --------------------
+Hire Date
+---------------------------------------------
+March     19, 1999
+
+Marvins                   Mattea
+January   24, 2000
+
+Lee                       David
+February  23, 2000
+
+Ande                      Sundar
+March     24, 2000
+
+Banda                     Amit
+April     21, 2000
+
+Ozer                      Lisa
+March     11, 1997
+
+Bloom                     Harrison
+March     23, 1998
+
+Fox                       Tayler
+January   24, 1998
+
+Smith                     William
+February  23, 1999
+
+Bates                     Elizabeth
+March     24, 1999
+
+Kumar                     Sundita
+April     21, 2000
+
+Abel                      Ellen
+May       11, 1996
+
+Hutton                    Alyssa
+March     19, 1997
+
+Taylor                    Jonathon
+March     24, 1998
+
+Livingston                Jack
+April     23, 1998
+
+Grant                     Kimberely
+May       24, 1999
+
+Johnson                   Charles
+January   04, 2000
+
+Taylor                    Winston
+January   24, 1998
+
+Fleaur                    Jean
+February  23, 1998
+
+Sullivan                  Martha
+June      21, 1999
+
+Geoni                     Girard
+February  03, 2000
+
+Sarchand                  Nandita
+January   27, 1996
+
+Bull                      Alexis
+February  20, 1997
+
+Dellinger                 Julia
+June      24, 1998
+
+Cabrio                    Anthony
+February  07, 1999
+
+Chung                     Kelly
+June      14, 1997
+
+Dilly                     Jennifer
+August    13, 1997
+
+Gates                     Timothy
+July      11, 1998
+
+Perkins                   Randall
+December  19, 1999
+
+Bell                      Sarah
+February  04, 1996
+
+Everett                   Britney
+March     03, 1997
+
+McCain                    Samuel
+July      01, 1998
+
+
+LAST_NAME                 FIRST_NAME
+------------------------- --------------------
+Hire Date
+---------------------------------------------
+Jones                     Vance
+March     17, 1999
+
+Walsh                     Alana
+April     24, 1998
+
+Feeney                    Kevin
+May       23, 1998
+
+OConnell                  Donald
+June      21, 1999
+
+Grant                     Douglas
+January   13, 2000
+
+Whalen                    Jennifer
+September 17, 1987
+
+Hartstein                 Michael
+February  17, 1996
+
+Fay                       Pat
+August    17, 1997
+
+Mavris                    Susan
+June      07, 1994
+
+Baer                      Hermann
+June      07, 1994
+
+Higgins                   Shelley
+June      07, 1994
+
+Gietz                     William
+June      07, 1994
+
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> --Question 17:
+SQL> 
+SQL> SELECT last_name, first_name, TO_CHAR(hire_date, 'DD Mon YYYY') AS "HireDate"
+  2  FROM employees;
+
+LAST_NAME                 FIRST_NAME           HireDate
+------------------------- -------------------- --------------------
+King                      Steven               17 Jun 1987
+Kochhar                   Neena                21 Sep 1989
+De Haan                   Lex                  13 Jan 1993
+Hunold                    Alexander            03 Jan 1990
+Ernst                     Bruce                21 May 1991
+Austin                    David                25 Jun 1997
+Pataballa                 Valli                05 Feb 1998
+Lorentz                   Diana                07 Feb 1999
+Greenberg                 Nancy                17 Aug 1994
+Faviet                    Daniel               16 Aug 1994
+Chen                      John                 28 Sep 1997
+Sciarra                   Ismael               30 Sep 1997
+Urman                     Jose Manuel          07 Mar 1998
+Popp                      Luis                 07 Dec 1999
+Raphaely                  Den                  07 Dec 1994
+Khoo                      Alexander            18 May 1995
+Baida                     Shelli               24 Dec 1997
+Tobias                    Sigal                24 Jul 1997
+Himuro                    Guy                  15 Nov 1998
+Colmenares                Karen                10 Aug 1999
+Weiss                     Matthew              18 Jul 1996
+Fripp                     Adam                 10 Apr 1997
+Kaufling                  Payam                01 May 1995
+Vollman                   Shanta               10 Oct 1997
+Mourgos                   Kevin                16 Nov 1999
+Nayer                     Julia                16 Jul 1997
+Mikkilineni               Irene                28 Sep 1998
+Landry                    James                14 Jan 1999
+Markle                    Steven               08 Mar 2000
+Bissot                    Laura                20 Aug 1997
+Atkinson                  Mozhe                30 Oct 1997
+Marlow                    James                16 Feb 1997
+Olson                     TJ                   10 Apr 1999
+Mallin                    Jason                14 Jun 1996
+Rogers                    Michael              26 Aug 1998
+Gee                       Ki                   12 Dec 1999
+Philtanker                Hazel                06 Feb 2000
+Ladwig                    Renske               14 Jul 1995
+Stiles                    Stephen              26 Oct 1997
+Seo                       John                 12 Feb 1998
+Patel                     Joshua               06 Apr 1998
+Rajs                      Trenna               17 Oct 1995
+Davies                    Curtis               29 Jan 1997
+Matos                     Randall              15 Mar 1998
+Vargas                    Peter                09 Jul 1998
+Russell                   John                 01 Oct 1996
+Partners                  Karen                05 Jan 1997
+Errazuriz                 Alberto              10 Mar 1997
+Cambrault                 Gerald               15 Oct 1999
+Zlotkey                   Eleni                29 Jan 2000
+Tucker                    Peter                30 Jan 1997
+Bernstein                 David                24 Mar 1997
+Hall                      Peter                20 Aug 1997
+Olsen                     Christopher          30 Mar 1998
+Cambrault                 Nanette              09 Dec 1998
+Tuvault                   Oliver               23 Nov 1999
+King                      Janette              30 Jan 1996
+Sully                     Patrick              04 Mar 1996
+McEwen                    Allan                01 Aug 1996
+Smith                     Lindsey              10 Mar 1997
+Doran                     Louise               15 Dec 1997
+Sewall                    Sarath               03 Nov 1998
+Vishney                   Clara                11 Nov 1997
+Greene                    Danielle             19 Mar 1999
+Marvins                   Mattea               24 Jan 2000
+Lee                       David                23 Feb 2000
+Ande                      Sundar               24 Mar 2000
+Banda                     Amit                 21 Apr 2000
+Ozer                      Lisa                 11 Mar 1997
+Bloom                     Harrison             23 Mar 1998
+Fox                       Tayler               24 Jan 1998
+Smith                     William              23 Feb 1999
+Bates                     Elizabeth            24 Mar 1999
+Kumar                     Sundita              21 Apr 2000
+Abel                      Ellen                11 May 1996
+Hutton                    Alyssa               19 Mar 1997
+Taylor                    Jonathon             24 Mar 1998
+Livingston                Jack                 23 Apr 1998
+Grant                     Kimberely            24 May 1999
+Johnson                   Charles              04 Jan 2000
+Taylor                    Winston              24 Jan 1998
+Fleaur                    Jean                 23 Feb 1998
+Sullivan                  Martha               21 Jun 1999
+Geoni                     Girard               03 Feb 2000
+Sarchand                  Nandita              27 Jan 1996
+Bull                      Alexis               20 Feb 1997
+Dellinger                 Julia                24 Jun 1998
+Cabrio                    Anthony              07 Feb 1999
+Chung                     Kelly                14 Jun 1997
+Dilly                     Jennifer             13 Aug 1997
+Gates                     Timothy              11 Jul 1998
+Perkins                   Randall              19 Dec 1999
+Bell                      Sarah                04 Feb 1996
+Everett                   Britney              03 Mar 1997
+McCain                    Samuel               01 Jul 1998
+Jones                     Vance                17 Mar 1999
+Walsh                     Alana                24 Apr 1998
+
+LAST_NAME                 FIRST_NAME           HireDate
+------------------------- -------------------- --------------------
+Feeney                    Kevin                23 May 1998
+OConnell                  Donald               21 Jun 1999
+Grant                     Douglas              13 Jan 2000
+Whalen                    Jennifer             17 Sep 1987
+Hartstein                 Michael              17 Feb 1996
+Fay                       Pat                  17 Aug 1997
+Mavris                    Susan                07 Jun 1994
+Baer                      Hermann              07 Jun 1994
+Higgins                   Shelley              07 Jun 1994
+Gietz                     William              07 Jun 1994
+
+107 rows selected.
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> SPOOL OFF;
